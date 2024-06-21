@@ -14,6 +14,7 @@ namespace Web_Plane.QuyDinh
             -Bỏ view vào thư mục cho đúng dễ tìm kiếm
             -Layout cũng bỏ vào thư mục cho dễ tìm kiếm
             -Layout chung nằm trong Views/Shared/Layout và ViewStars là nơi bắt đầu view
+            -Admin nằm trong Area/admin
             
          Th2:Git
             -Để Lưu code về nên lên github check có ai tải lên chưa
