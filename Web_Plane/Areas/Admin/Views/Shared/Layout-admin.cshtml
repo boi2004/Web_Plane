@@ -13,12 +13,13 @@
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href="~/Areas/Admin/Content/layout/css/sb-admin-2.min.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -146,7 +147,7 @@
 
             <!-- Sidebar Message -->
             <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
+                <img class="sidebar-card-illustration mb-2" src="~/Areas/Admin/Content/layout/img/undraw_rocket.svg" alt="...">
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
             </div>
@@ -166,7 +167,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
+                    @RenderBody()
                     <!-- Topbar Search -->
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
@@ -274,7 +275,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="~/Areas/Admin/Content/layout/img/undraw_profile_1.svg"
                                              alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -288,7 +289,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="~/Areas/Admin/Content/layout/img/undraw_profile_2.svg"
                                              alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -302,7 +303,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="~/Areas/Admin/Content/layout/img/undraw_profile_3.svg"
                                              alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -316,7 +317,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                        <img class="rounded-circle" src="~/Areas/Admin/Content/layout/https://source.unsplash.com/Mv9hjnEUHR4/60x60"
                                              alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -340,7 +341,7 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                     src="img/undraw_profile.svg">
+                                     src="~/Areas/Admin/Content/layout/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -450,7 +451,7 @@
                                 </div>
                             </div>
                         </div>
-                        @RenderBody()
+
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
@@ -677,7 +678,7 @@
                                 <div class="card-body">
                                     <div class="text-center">
                                         <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                             src="img/undraw_posting_photo.svg" alt="...">
+                                             src="~/Areas/Admin/Content/layout/img/undraw_posting_photo.svg" alt="...">
                                     </div>
                                     <p>
                                         Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
@@ -756,23 +757,23 @@
             </div>
         </div>
     </div>
-
+    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
     <!-- Bootstrap core JavaScript-->
-     <script src="~/Areas/Admin/Content/layoutvendor/jquery/jquery.min.js"></script>
-     <script src="~/Areas/Admin/Content/layoutvendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="~/Areas/Admin/Content/layout/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Areas/Admin/Content/layout/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Areas/Admin/Content/layout/~/Areas/Admin/Content/layout/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-     <script src="~/Areas/Admin/Content/layoutvendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Areas/Admin/Content/layout/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-     <script src="~/Areas/Admin/Content/layoutjs/sb-admin-2.min.js"></script>
+    <script src="~/Areas/Admin/Content/layout/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-     <script src="~/Areas/Admin/Content/layoutvendor/chart.js/Chart.min.js"></script>
+    <script src="~/Areas/Admin/Content/layout/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-     <script src="~/Areas/Admin/Content/layoutjs/demo/chart-area-demo.js"></script>
-     <script src="~/Areas/Admin/Content/layoutjs/demo/chart-pie-demo.js"></script>
+    <script src="~/Areas/Admin/Content/layout/js/demo/chart-area-demo.js"></script>
+    <script src="~/Areas/Admin/Content/layout/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
