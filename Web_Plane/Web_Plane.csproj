@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DangNhapAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Controllers\Chucnang\ChucNangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1892,7 +1893,6 @@
     <Content Include="Content\js\bootstrap.min.js.map" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\Layout-admin.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\View.cshtml" />
     <Content Include="Areas\Admin\Content\layout\scss\navs\_global.scss" />
     <Content Include="Areas\Admin\Content\layout\scss\navs\_sidebar.scss" />
     <Content Include="Areas\Admin\Content\layout\scss\navs\_topbar.scss" />
@@ -2066,6 +2066,7 @@
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.min.map" />
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Admin.cshtml" />
+    <Content Include="Areas\Admin\Views\DangNhapAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
