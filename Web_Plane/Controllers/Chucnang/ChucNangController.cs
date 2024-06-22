@@ -17,5 +17,10 @@ namespace Web_Plane.Controllers.Chucnang
         { 
             return View(); 
         }
+         public ActionResult QuenMatKhau() 
+        { 
+            return View(); 
+        }
+
     }
 }

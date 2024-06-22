@@ -163,6 +163,9 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\bootstrap.rtl.css" />
     <Content Include="Content\css\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\DangKy.css" />
+    <Content Include="Content\css\DangNhap.css" />
+    <Content Include="Content\css\QuenMatKhauStyle.css" />
     <Content Include="Content\js\bootstrap.bundle.js" />
     <Content Include="Content\js\bootstrap.bundle.min.js" />
     <Content Include="Content\js\bootstrap.esm.js" />
@@ -1853,6 +1856,7 @@
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.min.js" />
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.slim.js" />
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Content\Picture\hinhnenbautroi.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -2085,6 +2089,7 @@
     <Content Include="Views\ChucNang\DangNhap.cshtml" />
     <Content Include="Views\ChucNang\DangKy.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ChucNang\QuenMatKhau.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
