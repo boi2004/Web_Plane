@@ -6,14 +6,16 @@ using System.Web.Mvc;
 
 namespace Web_Plane.Controllers.Chucnang
 {
-    public class Chucnang : Controller
+    public class ChucNangController : Controller
     {
-        // GET: Dangnhap
-        public ActionResult Dangnhap()
+        // GET: ChucNang
+        public ActionResult DangNhap()
         {
             return View();
         }
-        //Đăng ký
-       
+        public ActionResult DangKy() 
+        { 
+            return View(); 
+        }
     }
 }

@@ -122,7 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
-    <Compile Include="Controllers\Chucnang\Chucnang.cs" />
+    <Compile Include="Controllers\Chucnang\ChucNangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2082,19 +2082,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Layout_chung.cshtml" />
-    <Content Include="Views\Chucnang\DangNhap.cshtml" />
-    <Content Include="Views\Chucnang\Dangky.cshtml" />
+    <Content Include="Views\ChucNang\DangNhap.cshtml" />
+    <Content Include="Views\ChucNang\DangKy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Controllers\User\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\HomeAdmin\" />
     <Folder Include="Views\Layout-user\" />
   </ItemGroup>
   <ItemGroup>
