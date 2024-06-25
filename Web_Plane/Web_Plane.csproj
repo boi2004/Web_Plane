@@ -168,6 +168,7 @@
     <Content Include="Content\css\DangNhap.css" />
     <Content Include="Content\css\Index.css" />
     <Content Include="Content\css\QuenMatKhauStyle.css" />
+    <Content Include="Content\js\Headermenu.js" />
     <Content Include="Content\js\bootstrap.bundle.js" />
     <Content Include="Content\js\bootstrap.bundle.min.js" />
     <Content Include="Content\js\bootstrap.esm.js" />
@@ -1858,6 +1859,7 @@
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.min.js" />
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.slim.js" />
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Areas\Admin\Content\layout\img\bell.png" />
     <Content Include="Content\Picture\hinhnenbautroi.jpg" />
     <Content Include="Content\Picture\logomaybay.jpg" />
     <Content Include="favicon.ico" />
