@@ -1,0 +1,891 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBMayBayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CATCANH">
+          <Key>
+            <PropertyRef Name="MaChangBay" />
+            <PropertyRef Name="IATA" />
+          </Key>
+          <Property Name="MaChangBay" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="IATA" Type="char" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHANGBAY">
+          <Key>
+            <PropertyRef Name="MaChangBay" />
+          </Key>
+          <Property Name="MaChangBay" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="IDCB" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Sohieu" Type="char" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHUYENBAY">
+          <Key>
+            <PropertyRef Name="IDCB" />
+          </Key>
+          <Property Name="IDCB" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ThoiGianKhoiHanh" Type="date" Nullable="false" />
+          <Property Name="ThoiGianBay" Type="float" Nullable="false" />
+          <Property Name="LoaiCB" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="IDHK" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CO">
+          <Key>
+            <PropertyRef Name="IDCB" />
+            <PropertyRef Name="MaLoaiVe" />
+          </Key>
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="IDCB" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="MaLoaiVe" Type="char" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DANGKY">
+          <Key>
+            <PropertyRef Name="CCCD" />
+            <PropertyRef Name="MaDV" />
+          </Key>
+          <Property Name="CCCD" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="MaDV" Type="char" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DAP">
+          <Key>
+            <PropertyRef Name="MaChangBay" />
+            <PropertyRef Name="IATA" />
+          </Key>
+          <Property Name="MaChangBay" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="IATA" Type="char" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DICHVU">
+          <Key>
+            <PropertyRef Name="MaDV" />
+          </Key>
+          <Property Name="MaDV" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="TenDV" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TrangThai" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="GiaTien" Type="int" Nullable="false" />
+          <Property Name="Ngay" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HANGHANGKHONG">
+          <Key>
+            <PropertyRef Name="IDHK" />
+          </Key>
+          <Property Name="IDHK" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="TenHang" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="IMG" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="CCCD" />
+          </Key>
+          <Property Name="CCCD" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="HoTen" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Sdt" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="DiaChi" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="LoaiKH" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NgaySinh" Type="date" Nullable="false" />
+          <Property Name="GioiTinh" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="QuocTich" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="IMG" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOAIVE">
+          <Key>
+            <PropertyRef Name="MaLoaiVe" />
+          </Key>
+          <Property Name="MaLoaiVe" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="GiaVe" Type="int" Nullable="false" />
+          <Property Name="TenLoaiVe" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MAYBAY">
+          <Key>
+            <PropertyRef Name="Sohieu" />
+          </Key>
+          <Property Name="Sohieu" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="IDHK" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SANBAY">
+          <Key>
+            <PropertyRef Name="IATA" />
+          </Key>
+          <Property Name="IATA" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="TenSanBay" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="QuocGia" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ThanhPho" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DiaChi" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="VeMayBay">
+          <Key>
+            <PropertyRef Name="MaVe" />
+          </Key>
+          <Property Name="MaVe" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Cua" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ChoNgoi" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="TrangThai" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="LoaiHanhLy" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ThanhTien" Type="int" Nullable="false" />
+          <Property Name="IDCB" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="CCCD" Type="char" MaxLength="12" />
+          <Property Name="MaLoaiVe" Type="char" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CATCANH__IATA__59063A47">
+          <End Role="SANBAY" Type="Self.SANBAY" Multiplicity="1" />
+          <End Role="CATCANH" Type="Self.CATCANH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANBAY">
+              <PropertyRef Name="IATA" />
+            </Principal>
+            <Dependent Role="CATCANH">
+              <PropertyRef Name="IATA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CATCANH__MaChang__5812160E">
+          <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="1" />
+          <End Role="CATCANH" Type="Self.CATCANH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHANGBAY">
+              <PropertyRef Name="MaChangBay" />
+            </Principal>
+            <Dependent Role="CATCANH">
+              <PropertyRef Name="MaChangBay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHANGBAY__IDCB__5070F446">
+          <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
+          <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUYENBAY">
+              <PropertyRef Name="IDCB" />
+            </Principal>
+            <Dependent Role="CHANGBAY">
+              <PropertyRef Name="IDCB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHANGBAY__Sohieu__5165187F">
+          <End Role="MAYBAY" Type="Self.MAYBAY" Multiplicity="1" />
+          <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAYBAY">
+              <PropertyRef Name="Sohieu" />
+            </Principal>
+            <Dependent Role="CHANGBAY">
+              <PropertyRef Name="Sohieu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHUYENBAY__IDHK__48CFD27E">
+          <End Role="HANGHANGKHONG" Type="Self.HANGHANGKHONG" Multiplicity="1" />
+          <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HANGHANGKHONG">
+              <PropertyRef Name="IDHK" />
+            </Principal>
+            <Dependent Role="CHUYENBAY">
+              <PropertyRef Name="IDHK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CO__IDCB__5BE2A6F2">
+          <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
+          <End Role="CO" Type="Self.CO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUYENBAY">
+              <PropertyRef Name="IDCB" />
+            </Principal>
+            <Dependent Role="CO">
+              <PropertyRef Name="IDCB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CO__MaLoaiVe__5CD6CB2B">
+          <End Role="LOAIVE" Type="Self.LOAIVE" Multiplicity="1" />
+          <End Role="CO" Type="Self.CO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIVE">
+              <PropertyRef Name="MaLoaiVe" />
+            </Principal>
+            <Dependent Role="CO">
+              <PropertyRef Name="MaLoaiVe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DANGKY__CCCD__44FF419A">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+          <End Role="DANGKY" Type="Self.DANGKY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="CCCD" />
+            </Principal>
+            <Dependent Role="DANGKY">
+              <PropertyRef Name="CCCD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DANGKY__MaDV__45F365D3">
+          <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
+          <End Role="DANGKY" Type="Self.DANGKY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DICHVU">
+              <PropertyRef Name="MaDV" />
+            </Principal>
+            <Dependent Role="DANGKY">
+              <PropertyRef Name="MaDV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DAP__IATA__5535A963">
+          <End Role="SANBAY" Type="Self.SANBAY" Multiplicity="1" />
+          <End Role="DAP" Type="Self.DAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANBAY">
+              <PropertyRef Name="IATA" />
+            </Principal>
+            <Dependent Role="DAP">
+              <PropertyRef Name="IATA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DAP__MaChangBay__5441852A">
+          <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="1" />
+          <End Role="DAP" Type="Self.DAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHANGBAY">
+              <PropertyRef Name="MaChangBay" />
+            </Principal>
+            <Dependent Role="DAP">
+              <PropertyRef Name="MaChangBay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MAYBAY__IDHK__3E52440B">
+          <End Role="HANGHANGKHONG" Type="Self.HANGHANGKHONG" Multiplicity="1" />
+          <End Role="MAYBAY" Type="Self.MAYBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HANGHANGKHONG">
+              <PropertyRef Name="IDHK" />
+            </Principal>
+            <Dependent Role="MAYBAY">
+              <PropertyRef Name="IDHK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VeMayBay__CCCD__4CA06362">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="CCCD" />
+            </Principal>
+            <Dependent Role="VeMayBay">
+              <PropertyRef Name="CCCD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VeMayBay__IDCB__4BAC3F29">
+          <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
+          <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUYENBAY">
+              <PropertyRef Name="IDCB" />
+            </Principal>
+            <Dependent Role="VeMayBay">
+              <PropertyRef Name="IDCB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VeMayBay__MaLoai__4D94879B">
+          <End Role="LOAIVE" Type="Self.LOAIVE" Multiplicity="1" />
+          <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIVE">
+              <PropertyRef Name="MaLoaiVe" />
+            </Principal>
+            <Dependent Role="VeMayBay">
+              <PropertyRef Name="MaLoaiVe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBMayBayModelStoreContainer">
+          <EntitySet Name="CATCANH" EntityType="Self.CATCANH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHANGBAY" EntityType="Self.CHANGBAY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHUYENBAY" EntityType="Self.CHUYENBAY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CO" EntityType="Self.CO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DANGKY" EntityType="Self.DANGKY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DAP" EntityType="Self.DAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DICHVU" EntityType="Self.DICHVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HANGHANGKHONG" EntityType="Self.HANGHANGKHONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAIVE" EntityType="Self.LOAIVE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MAYBAY" EntityType="Self.MAYBAY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SANBAY" EntityType="Self.SANBAY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VeMayBay" EntityType="Self.VeMayBay" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CATCANH__IATA__59063A47" Association="Self.FK__CATCANH__IATA__59063A47">
+            <End Role="SANBAY" EntitySet="SANBAY" />
+            <End Role="CATCANH" EntitySet="CATCANH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CATCANH__MaChang__5812160E" Association="Self.FK__CATCANH__MaChang__5812160E">
+            <End Role="CHANGBAY" EntitySet="CHANGBAY" />
+            <End Role="CATCANH" EntitySet="CATCANH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHANGBAY__IDCB__5070F446" Association="Self.FK__CHANGBAY__IDCB__5070F446">
+            <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
+            <End Role="CHANGBAY" EntitySet="CHANGBAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHANGBAY__Sohieu__5165187F" Association="Self.FK__CHANGBAY__Sohieu__5165187F">
+            <End Role="MAYBAY" EntitySet="MAYBAY" />
+            <End Role="CHANGBAY" EntitySet="CHANGBAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHUYENBAY__IDHK__48CFD27E" Association="Self.FK__CHUYENBAY__IDHK__48CFD27E">
+            <End Role="HANGHANGKHONG" EntitySet="HANGHANGKHONG" />
+            <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CO__IDCB__5BE2A6F2" Association="Self.FK__CO__IDCB__5BE2A6F2">
+            <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
+            <End Role="CO" EntitySet="CO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CO__MaLoaiVe__5CD6CB2B" Association="Self.FK__CO__MaLoaiVe__5CD6CB2B">
+            <End Role="LOAIVE" EntitySet="LOAIVE" />
+            <End Role="CO" EntitySet="CO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DANGKY__CCCD__44FF419A" Association="Self.FK__DANGKY__CCCD__44FF419A">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="DANGKY" EntitySet="DANGKY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DANGKY__MaDV__45F365D3" Association="Self.FK__DANGKY__MaDV__45F365D3">
+            <End Role="DICHVU" EntitySet="DICHVU" />
+            <End Role="DANGKY" EntitySet="DANGKY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DAP__IATA__5535A963" Association="Self.FK__DAP__IATA__5535A963">
+            <End Role="SANBAY" EntitySet="SANBAY" />
+            <End Role="DAP" EntitySet="DAP" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DAP__MaChangBay__5441852A" Association="Self.FK__DAP__MaChangBay__5441852A">
+            <End Role="CHANGBAY" EntitySet="CHANGBAY" />
+            <End Role="DAP" EntitySet="DAP" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MAYBAY__IDHK__3E52440B" Association="Self.FK__MAYBAY__IDHK__3E52440B">
+            <End Role="HANGHANGKHONG" EntitySet="HANGHANGKHONG" />
+            <End Role="MAYBAY" EntitySet="MAYBAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VeMayBay__CCCD__4CA06362" Association="Self.FK__VeMayBay__CCCD__4CA06362">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="VeMayBay" EntitySet="VeMayBay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VeMayBay__IDCB__4BAC3F29" Association="Self.FK__VeMayBay__IDCB__4BAC3F29">
+            <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
+            <End Role="VeMayBay" EntitySet="VeMayBay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VeMayBay__MaLoai__4D94879B" Association="Self.FK__VeMayBay__MaLoai__4D94879B">
+            <End Role="LOAIVE" EntitySet="LOAIVE" />
+            <End Role="VeMayBay" EntitySet="VeMayBay" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBMayBayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CHANGBAY">
+          <Key>
+            <PropertyRef Name="MaChangBay" />
+          </Key>
+          <Property Name="MaChangBay" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDCB" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Sohieu" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK__CHANGBAY__IDCB__5070F446" FromRole="CHANGBAY" ToRole="CHUYENBAY" />
+          <NavigationProperty Name="MAYBAY" Relationship="Self.FK__CHANGBAY__Sohieu__5165187F" FromRole="CHANGBAY" ToRole="MAYBAY" />
+          <NavigationProperty Name="SANBAYs" Relationship="Self.CATCANH" FromRole="CHANGBAY" ToRole="SANBAY" />
+          <NavigationProperty Name="SANBAYs1" Relationship="Self.DAP" FromRole="CHANGBAY" ToRole="SANBAY" />
+        </EntityType>
+        <EntityType Name="CHUYENBAY">
+          <Key>
+            <PropertyRef Name="IDCB" />
+          </Key>
+          <Property Name="IDCB" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ThoiGianKhoiHanh" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ThoiGianBay" Type="Double" Nullable="false" />
+          <Property Name="LoaiCB" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDHK" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CHANGBAYs" Relationship="Self.FK__CHANGBAY__IDCB__5070F446" FromRole="CHUYENBAY" ToRole="CHANGBAY" />
+          <NavigationProperty Name="HANGHANGKHONG" Relationship="Self.FK__CHUYENBAY__IDHK__48CFD27E" FromRole="CHUYENBAY" ToRole="HANGHANGKHONG" />
+          <NavigationProperty Name="COes" Relationship="Self.FK__CO__IDCB__5BE2A6F2" FromRole="CHUYENBAY" ToRole="CO" />
+          <NavigationProperty Name="VeMayBays" Relationship="Self.FK__VeMayBay__IDCB__4BAC3F29" FromRole="CHUYENBAY" ToRole="VeMayBay" />
+        </EntityType>
+        <EntityType Name="CO">
+          <Key>
+            <PropertyRef Name="IDCB" />
+            <PropertyRef Name="MaLoaiVe" />
+          </Key>
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="IDCB" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaLoaiVe" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK__CO__IDCB__5BE2A6F2" FromRole="CO" ToRole="CHUYENBAY" />
+          <NavigationProperty Name="LOAIVE" Relationship="Self.FK__CO__MaLoaiVe__5CD6CB2B" FromRole="CO" ToRole="LOAIVE" />
+        </EntityType>
+        <EntityType Name="DICHVU">
+          <Key>
+            <PropertyRef Name="MaDV" />
+          </Key>
+          <Property Name="MaDV" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenDV" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GiaTien" Type="Int32" Nullable="false" />
+          <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="KHACHHANGs" Relationship="Self.DANGKY" FromRole="DICHVU" ToRole="KHACHHANG" />
+        </EntityType>
+        <EntityType Name="HANGHANGKHONG">
+          <Key>
+            <PropertyRef Name="IDHK" />
+          </Key>
+          <Property Name="IDHK" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenHang" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IMG" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CHUYENBAYs" Relationship="Self.FK__CHUYENBAY__IDHK__48CFD27E" FromRole="HANGHANGKHONG" ToRole="CHUYENBAY" />
+          <NavigationProperty Name="MAYBAYs" Relationship="Self.FK__MAYBAY__IDHK__3E52440B" FromRole="HANGHANGKHONG" ToRole="MAYBAY" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="CCCD" />
+          </Key>
+          <Property Name="CCCD" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="HoTen" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sdt" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LoaiKH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GioiTinh" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="QuocTich" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IMG" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="VeMayBays" Relationship="Self.FK__VeMayBay__CCCD__4CA06362" FromRole="KHACHHANG" ToRole="VeMayBay" />
+          <NavigationProperty Name="DICHVUs" Relationship="Self.DANGKY" FromRole="KHACHHANG" ToRole="DICHVU" />
+        </EntityType>
+        <EntityType Name="LOAIVE">
+          <Key>
+            <PropertyRef Name="MaLoaiVe" />
+          </Key>
+          <Property Name="MaLoaiVe" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="GiaVe" Type="Int32" Nullable="false" />
+          <Property Name="TenLoaiVe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="COes" Relationship="Self.FK__CO__MaLoaiVe__5CD6CB2B" FromRole="LOAIVE" ToRole="CO" />
+          <NavigationProperty Name="VeMayBays" Relationship="Self.FK__VeMayBay__MaLoai__4D94879B" FromRole="LOAIVE" ToRole="VeMayBay" />
+        </EntityType>
+        <EntityType Name="MAYBAY">
+          <Key>
+            <PropertyRef Name="Sohieu" />
+          </Key>
+          <Property Name="Sohieu" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IDHK" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CHANGBAYs" Relationship="Self.FK__CHANGBAY__Sohieu__5165187F" FromRole="MAYBAY" ToRole="CHANGBAY" />
+          <NavigationProperty Name="HANGHANGKHONG" Relationship="Self.FK__MAYBAY__IDHK__3E52440B" FromRole="MAYBAY" ToRole="HANGHANGKHONG" />
+        </EntityType>
+        <EntityType Name="SANBAY">
+          <Key>
+            <PropertyRef Name="IATA" />
+          </Key>
+          <Property Name="IATA" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenSanBay" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QuocGia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ThanhPho" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CHANGBAYs" Relationship="Self.CATCANH" FromRole="SANBAY" ToRole="CHANGBAY" />
+          <NavigationProperty Name="CHANGBAYs1" Relationship="Self.DAP" FromRole="SANBAY" ToRole="CHANGBAY" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VeMayBay">
+          <Key>
+            <PropertyRef Name="MaVe" />
+          </Key>
+          <Property Name="MaVe" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Cua" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ChoNgoi" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LoaiHanhLy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ThanhTien" Type="Int32" Nullable="false" />
+          <Property Name="IDCB" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CCCD" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="MaLoaiVe" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK__VeMayBay__IDCB__4BAC3F29" FromRole="VeMayBay" ToRole="CHUYENBAY" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__VeMayBay__CCCD__4CA06362" FromRole="VeMayBay" ToRole="KHACHHANG" />
+          <NavigationProperty Name="LOAIVE" Relationship="Self.FK__VeMayBay__MaLoai__4D94879B" FromRole="VeMayBay" ToRole="LOAIVE" />
+        </EntityType>
+        <Association Name="FK__CHANGBAY__IDCB__5070F446">
+          <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
+          <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUYENBAY">
+              <PropertyRef Name="IDCB" />
+            </Principal>
+            <Dependent Role="CHANGBAY">
+              <PropertyRef Name="IDCB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHANGBAY__Sohieu__5165187F">
+          <End Role="MAYBAY" Type="Self.MAYBAY" Multiplicity="1" />
+          <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAYBAY">
+              <PropertyRef Name="Sohieu" />
+            </Principal>
+            <Dependent Role="CHANGBAY">
+              <PropertyRef Name="Sohieu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHUYENBAY__IDHK__48CFD27E">
+          <End Role="HANGHANGKHONG" Type="Self.HANGHANGKHONG" Multiplicity="1" />
+          <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HANGHANGKHONG">
+              <PropertyRef Name="IDHK" />
+            </Principal>
+            <Dependent Role="CHUYENBAY">
+              <PropertyRef Name="IDHK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CO__IDCB__5BE2A6F2">
+          <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
+          <End Role="CO" Type="Self.CO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUYENBAY">
+              <PropertyRef Name="IDCB" />
+            </Principal>
+            <Dependent Role="CO">
+              <PropertyRef Name="IDCB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VeMayBay__IDCB__4BAC3F29">
+          <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
+          <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUYENBAY">
+              <PropertyRef Name="IDCB" />
+            </Principal>
+            <Dependent Role="VeMayBay">
+              <PropertyRef Name="IDCB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CO__MaLoaiVe__5CD6CB2B">
+          <End Role="LOAIVE" Type="Self.LOAIVE" Multiplicity="1" />
+          <End Role="CO" Type="Self.CO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIVE">
+              <PropertyRef Name="MaLoaiVe" />
+            </Principal>
+            <Dependent Role="CO">
+              <PropertyRef Name="MaLoaiVe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MAYBAY__IDHK__3E52440B">
+          <End Role="HANGHANGKHONG" Type="Self.HANGHANGKHONG" Multiplicity="1" />
+          <End Role="MAYBAY" Type="Self.MAYBAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HANGHANGKHONG">
+              <PropertyRef Name="IDHK" />
+            </Principal>
+            <Dependent Role="MAYBAY">
+              <PropertyRef Name="IDHK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VeMayBay__CCCD__4CA06362">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="CCCD" />
+            </Principal>
+            <Dependent Role="VeMayBay">
+              <PropertyRef Name="CCCD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VeMayBay__MaLoai__4D94879B">
+          <End Role="LOAIVE" Type="Self.LOAIVE" Multiplicity="1" />
+          <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIVE">
+              <PropertyRef Name="MaLoaiVe" />
+            </Principal>
+            <Dependent Role="VeMayBay">
+              <PropertyRef Name="MaLoaiVe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CATCANH">
+          <End Role="SANBAY" Type="Self.SANBAY" Multiplicity="*" />
+          <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="*" />
+        </Association>
+        <Association Name="DANGKY">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+          <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="*" />
+        </Association>
+        <Association Name="DAP">
+          <End Role="SANBAY" Type="Self.SANBAY" Multiplicity="*" />
+          <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DBMayBayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CHANGBAYs" EntityType="Self.CHANGBAY" />
+          <EntitySet Name="CHUYENBAYs" EntityType="Self.CHUYENBAY" />
+          <EntitySet Name="COes" EntityType="Self.CO" />
+          <EntitySet Name="DICHVUs" EntityType="Self.DICHVU" />
+          <EntitySet Name="HANGHANGKHONGs" EntityType="Self.HANGHANGKHONG" />
+          <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+          <EntitySet Name="LOAIVEs" EntityType="Self.LOAIVE" />
+          <EntitySet Name="MAYBAYs" EntityType="Self.MAYBAY" />
+          <EntitySet Name="SANBAYs" EntityType="Self.SANBAY" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="VeMayBays" EntityType="Self.VeMayBay" />
+          <AssociationSet Name="FK__CHANGBAY__IDCB__5070F446" Association="Self.FK__CHANGBAY__IDCB__5070F446">
+            <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />
+            <End Role="CHANGBAY" EntitySet="CHANGBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHANGBAY__Sohieu__5165187F" Association="Self.FK__CHANGBAY__Sohieu__5165187F">
+            <End Role="MAYBAY" EntitySet="MAYBAYs" />
+            <End Role="CHANGBAY" EntitySet="CHANGBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHUYENBAY__IDHK__48CFD27E" Association="Self.FK__CHUYENBAY__IDHK__48CFD27E">
+            <End Role="HANGHANGKHONG" EntitySet="HANGHANGKHONGs" />
+            <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CO__IDCB__5BE2A6F2" Association="Self.FK__CO__IDCB__5BE2A6F2">
+            <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />
+            <End Role="CO" EntitySet="COes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VeMayBay__IDCB__4BAC3F29" Association="Self.FK__VeMayBay__IDCB__4BAC3F29">
+            <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />
+            <End Role="VeMayBay" EntitySet="VeMayBays" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CO__MaLoaiVe__5CD6CB2B" Association="Self.FK__CO__MaLoaiVe__5CD6CB2B">
+            <End Role="LOAIVE" EntitySet="LOAIVEs" />
+            <End Role="CO" EntitySet="COes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MAYBAY__IDHK__3E52440B" Association="Self.FK__MAYBAY__IDHK__3E52440B">
+            <End Role="HANGHANGKHONG" EntitySet="HANGHANGKHONGs" />
+            <End Role="MAYBAY" EntitySet="MAYBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VeMayBay__CCCD__4CA06362" Association="Self.FK__VeMayBay__CCCD__4CA06362">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="VeMayBay" EntitySet="VeMayBays" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VeMayBay__MaLoai__4D94879B" Association="Self.FK__VeMayBay__MaLoai__4D94879B">
+            <End Role="LOAIVE" EntitySet="LOAIVEs" />
+            <End Role="VeMayBay" EntitySet="VeMayBays" />
+          </AssociationSet>
+          <AssociationSet Name="CATCANH" Association="Self.CATCANH">
+            <End Role="SANBAY" EntitySet="SANBAYs" />
+            <End Role="CHANGBAY" EntitySet="CHANGBAYs" />
+          </AssociationSet>
+          <AssociationSet Name="DANGKY" Association="Self.DANGKY">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="DICHVU" EntitySet="DICHVUs" />
+          </AssociationSet>
+          <AssociationSet Name="DAP" Association="Self.DAP">
+            <End Role="SANBAY" EntitySet="SANBAYs" />
+            <End Role="CHANGBAY" EntitySet="CHANGBAYs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBMayBayModelStoreContainer" CdmEntityContainer="DBMayBayEntities">
+          <EntitySetMapping Name="CHANGBAYs">
+            <EntityTypeMapping TypeName="DBMayBayModel.CHANGBAY">
+              <MappingFragment StoreEntitySet="CHANGBAY">
+                <ScalarProperty Name="MaChangBay" ColumnName="MaChangBay" />
+                <ScalarProperty Name="IDCB" ColumnName="IDCB" />
+                <ScalarProperty Name="Sohieu" ColumnName="Sohieu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHUYENBAYs">
+            <EntityTypeMapping TypeName="DBMayBayModel.CHUYENBAY">
+              <MappingFragment StoreEntitySet="CHUYENBAY">
+                <ScalarProperty Name="IDCB" ColumnName="IDCB" />
+                <ScalarProperty Name="ThoiGianKhoiHanh" ColumnName="ThoiGianKhoiHanh" />
+                <ScalarProperty Name="ThoiGianBay" ColumnName="ThoiGianBay" />
+                <ScalarProperty Name="LoaiCB" ColumnName="LoaiCB" />
+                <ScalarProperty Name="IDHK" ColumnName="IDHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COes">
+            <EntityTypeMapping TypeName="DBMayBayModel.CO">
+              <MappingFragment StoreEntitySet="CO">
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="IDCB" ColumnName="IDCB" />
+                <ScalarProperty Name="MaLoaiVe" ColumnName="MaLoaiVe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DICHVUs">
+            <EntityTypeMapping TypeName="DBMayBayModel.DICHVU">
+              <MappingFragment StoreEntitySet="DICHVU">
+                <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+                <ScalarProperty Name="TenDV" ColumnName="TenDV" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+                <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HANGHANGKHONGs">
+            <EntityTypeMapping TypeName="DBMayBayModel.HANGHANGKHONG">
+              <MappingFragment StoreEntitySet="HANGHANGKHONG">
+                <ScalarProperty Name="IDHK" ColumnName="IDHK" />
+                <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+                <ScalarProperty Name="IMG" ColumnName="IMG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACHHANGs">
+            <EntityTypeMapping TypeName="DBMayBayModel.KHACHHANG">
+              <MappingFragment StoreEntitySet="KHACHHANG">
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="LoaiKH" ColumnName="LoaiKH" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="QuocTich" ColumnName="QuocTich" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IMG" ColumnName="IMG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAIVEs">
+            <EntityTypeMapping TypeName="DBMayBayModel.LOAIVE">
+              <MappingFragment StoreEntitySet="LOAIVE">
+                <ScalarProperty Name="MaLoaiVe" ColumnName="MaLoaiVe" />
+                <ScalarProperty Name="GiaVe" ColumnName="GiaVe" />
+                <ScalarProperty Name="TenLoaiVe" ColumnName="TenLoaiVe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAYBAYs">
+            <EntityTypeMapping TypeName="DBMayBayModel.MAYBAY">
+              <MappingFragment StoreEntitySet="MAYBAY">
+                <ScalarProperty Name="Sohieu" ColumnName="Sohieu" />
+                <ScalarProperty Name="IDHK" ColumnName="IDHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SANBAYs">
+            <EntityTypeMapping TypeName="DBMayBayModel.SANBAY">
+              <MappingFragment StoreEntitySet="SANBAY">
+                <ScalarProperty Name="IATA" ColumnName="IATA" />
+                <ScalarProperty Name="TenSanBay" ColumnName="TenSanBay" />
+                <ScalarProperty Name="QuocGia" ColumnName="QuocGia" />
+                <ScalarProperty Name="ThanhPho" ColumnName="ThanhPho" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBMayBayModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VeMayBays">
+            <EntityTypeMapping TypeName="DBMayBayModel.VeMayBay">
+              <MappingFragment StoreEntitySet="VeMayBay">
+                <ScalarProperty Name="MaVe" ColumnName="MaVe" />
+                <ScalarProperty Name="Cua" ColumnName="Cua" />
+                <ScalarProperty Name="ChoNgoi" ColumnName="ChoNgoi" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="LoaiHanhLy" ColumnName="LoaiHanhLy" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+                <ScalarProperty Name="IDCB" ColumnName="IDCB" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="MaLoaiVe" ColumnName="MaLoaiVe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CATCANH" TypeName="DBMayBayModel.CATCANH" StoreEntitySet="CATCANH">
+            <EndProperty Name="SANBAY">
+              <ScalarProperty Name="IATA" ColumnName="IATA" />
+            </EndProperty>
+            <EndProperty Name="CHANGBAY">
+              <ScalarProperty Name="MaChangBay" ColumnName="MaChangBay" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="DANGKY" TypeName="DBMayBayModel.DANGKY" StoreEntitySet="DANGKY">
+            <EndProperty Name="KHACHHANG">
+              <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+            </EndProperty>
+            <EndProperty Name="DICHVU">
+              <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="DAP" TypeName="DBMayBayModel.DAP" StoreEntitySet="DAP">
+            <EndProperty Name="SANBAY">
+              <ScalarProperty Name="IATA" ColumnName="IATA" />
+            </EndProperty>
+            <EndProperty Name="CHANGBAY">
+              <ScalarProperty Name="MaChangBay" ColumnName="MaChangBay" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
