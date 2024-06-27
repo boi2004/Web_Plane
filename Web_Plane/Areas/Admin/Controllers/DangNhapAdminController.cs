@@ -6,13 +6,12 @@ using System.Web.Mvc;
 
 namespace Web_Plane.Areas.Admin.Controllers
 {
-    public class HomeAdminController : Controller
+    public class DangNhapAdminController : Controller
     {
-        // GET: Admin/HomeAdmin
+        // GET: Admin/DangNhapAdmin
         public ActionResult Index()
         {
             return View();
         }
-      
     }
 }
