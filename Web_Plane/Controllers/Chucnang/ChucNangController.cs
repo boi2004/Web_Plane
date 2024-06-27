@@ -23,7 +23,7 @@ namespace Web_Plane.Controllers.Chucnang
         {
             if (ModelState.IsValid)
             {
-                // Kiểm tra đăng nhập cho admin
+                // Kiểm tra đăng nhập cho adminm
                 if (model.Email == "admin@example.com" && model.Password == "1")
                 {
                     // Đăng nhập thành công với vai trò admin
