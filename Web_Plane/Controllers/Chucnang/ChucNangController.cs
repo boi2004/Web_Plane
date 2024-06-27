@@ -23,13 +23,13 @@ namespace Web_Plane.Controllers.Chucnang
         {
             if (ModelState.IsValid)
             {
-                // Kiểm tra đăng nhập cho adminm
+                // Kiểm tra đăng nhập cho adminmm
                 if (model.Email == "admin@example.com" && model.Password == "1")
                 {
                     // Đăng nhập thành công với vai trò admin
                     Session["IsAdmin"] = true;
-                    // return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
-                    return RedirectToAction("TrangChu", "Home");
+                     return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
+                   // return RedirectToAction("TrangChu", "Home");
                 }
 
                 // Kiểm tra đăng nhập cho người dùng thông thường
@@ -55,6 +55,10 @@ namespace Web_Plane.Controllers.Chucnang
          { 
             return View(); 
          }
+        public ActionResult DangKy(KHACHHANG kHACHHANG)
+        {
+
+        }
          public ActionResult QuenMatKhau() 
          { 
             return View(); 
