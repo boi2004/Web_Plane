@@ -4,16 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Web_Plane.Controllers
+namespace Web_Plane.Areas.Admin.Controllers
 {
-    
     public class HomeAdminController : Controller
     {
-        // GET: HomeAdmin
+        // GET: Admin/HomeAdmin
         public ActionResult Index()
         {
             return View();
         }
-      
     }
 }

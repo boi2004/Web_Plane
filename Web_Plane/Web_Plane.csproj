@@ -120,22 +120,61 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\DangNhapAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Controllers\Chucnang\ChucNangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CHANGBAY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHUYENBAY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CO.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DICHVU.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HANGHANGKHONG.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOAIVE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MAYBAY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelClass\dangnhap.cs" />
+    <Compile Include="Models\ModelClass\User.cs" />
+    <Compile Include="Models\SANBAY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VeMayBay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuyDinh\Quydinh.cs" />
@@ -177,6 +216,7 @@
     <Content Include="Content\css\DangNhap.css" />
     <Content Include="Content\css\Index.css" />
     <Content Include="Content\css\QuenMatKhauStyle.css" />
+    <Content Include="Content\css\TrangChu.css" />
     <Content Include="Content\js\Headermenu.js" />
     <Content Include="Content\js\bootstrap.bundle.js" />
     <Content Include="Content\js\bootstrap.bundle.min.js" />
@@ -1869,6 +1909,7 @@
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.slim.js" />
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Areas\Admin\Content\layout\img\bell.png" />
+    <Content Include="Content\Picture\hinhnenbackgroundplane.jpg" />
     <Content Include="Content\Picture\hinhnenbautroi.jpg" />
     <Content Include="Content\Picture\logomaybay.jpg" />
     <Content Include="favicon.ico" />
@@ -2070,11 +2111,15 @@
     <Content Include="Areas\Admin\Content\layout\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.min.map" />
     <Content Include="Areas\Admin\Content\layout\vendor\jquery\jquery.slim.min.map" />
-    <Content Include="Areas\Admin\Views\HomeAdmin\Admin.cshtml" />
-    <Content Include="Areas\Admin\Views\DangNhapAdmin\Index.cshtml" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -2108,9 +2153,10 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\Model1.edmx.diagram">
+    <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
+    </Content>
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2137,6 +2183,7 @@
     <Content Include="Views\ChucNang\DangKy.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ChucNang\QuenMatKhau.cshtml" />
+    <Content Include="Views\Home\TrangChu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

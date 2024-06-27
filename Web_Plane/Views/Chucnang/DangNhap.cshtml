@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Web_Plane.Models.ModelClass.dangnhap
+
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -12,24 +14,30 @@
 </head>
 <body>
     <div class="wrapper">
-        <form action="">
+        @using (Html.BeginForm("Dangnhap", "ChucNang", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
             <h1>Đăng nhập</h1>
             <div class="input-box">
-                <input type="text" placeholder="Nhập email" required />
+                @Html.TextBoxFor(m => m.Email, new { @placeholder = "Nhập Email", @required = "required", @class = "form-control" })
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="text" placeholder="Nhập mật khẩu" required />
+                @Html.PasswordFor(m => m.Password, new { @placeholder = "Nhập mật khẩu", @required = "required", @class = "form-control" })
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="Quen_mat_khau">
-                <a href="#">Quên mật khẩu</a>
+                @Html.ActionLink("Quên mật khẩu", "QuenMatKhau", "ChucNang")
             </div>
             <button type="submit" class="btn_Dang_nhap">Đăng nhập</button>
+
             <div class="Dang_ky_tai_khoan">
-                <label>Bạn chưa có tài khoản ?<a href="#">Tạo tài khoản</a></label>
+                <label>
+                    Bạn chưa có tài khoản?
+                    @Html.ActionLink("Tạo tài khoản", "DangKy", "ChucNang")
+                </label>
             </div>
-        </form>
+        }
     </div>
 </body>
 </html>
