@@ -12,13 +12,30 @@
     text-align: center;
     position: relative;
 }
+.duong_line {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin-top: 70px;
+    
+}
+.duong_line1 {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin-top: 70px;
+    
+}
 
 .form_Dien_thong_tin_chuyen_bay {
-    background-color: #ffffff;
-    
+    background-color: transparent;
     position: relative;
+    border: 2px solid rgba(255,255,255,.2);
     border-radius: 20px;
-    box-shadow: 1px 1px 1px 1px #b4b4b4;
+    backdrop-filter: blur(60px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
 .fs-7
 {
@@ -93,3 +110,66 @@
         .content-chuyen_bay_pho_bien .card .card-body p {
             font-weight: bold;
         }
+
+.content3
+{
+    margin-top:60px;
+}
+    .da_dang_khach_san
+    {
+        display:flex;
+    }
+.da_dang_khach_san .card {
+    margin-top: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    box-shadow: 1px 1px 1px 1px #b4b4b4;
+}
+    .da_dang_khach_san .card img {
+        border-radius: 10px;
+    }
+        .da_dang_khach_san .card h5
+        {
+            font-size:12px;
+            font-weight:bold;
+        }
+    .da_dang_khach_san .card p {
+        color: #F86608;
+    }
+
+.content4
+{
+    margin-bottom:20px;
+}
+.nhan_xet_cua_khach_hang h2 {
+    padding-left: 380px;
+    font-weight: bold;
+    padding-top: 35px;
+    padding-bottom: 30px;
+    color: #ffffff;
+}
+.nhan_xet_cua_khach_hang {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: #0099FF;
+    border-radius: 20px;
+}
+.card_nhan_xet_khach_hang
+{display:flex;
+ margin-left:130px;
+}
+    .card_nhan_xet_khach_hang .card {
+        position: relative;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+        background-color: transparent;
+        color:#ffffff;
+        
+        backdrop-filter: blur(80px);
+        border: 2px solid rgba(255,255,255,.2);
+    }
