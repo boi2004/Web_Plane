@@ -5,8 +5,91 @@
 }
 
 .banner {
-    position: relative;
-    width: 1120px;
-    text-align: center;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
     border-radius: 20px;
+    text-align: center;
+    position: relative;
 }
+
+.form_Dien_thong_tin_chuyen_bay {
+    background-color: #ffffff;
+    
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px 1px #b4b4b4;
+}
+.fs-7
+{
+    font-size:15px;
+}
+.fs-8
+{
+    font-size:13px;
+}
+.inp-width
+{
+    width:240px;
+}
+.inp-height
+{
+    height:52px;
+}
+.btnTimKiem:hover {
+    border: 1px solid #49caaf;
+    background-color: #ffffff;
+    color: #49caaf;
+}
+.date-wid {
+    width: 220px;
+}
+
+.content1 
+{
+    position:center;
+}
+.content-Goi-y-tuong
+{   
+    display:flex;
+    
+
+}
+    .content-Goi-y-tuong .card img
+    {
+        border-radius:10px;
+    }
+    .content-Goi-y-tuong .card {
+        margin-top: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        box-shadow: 1px 1px 1px 1px #b4b4b4;
+    }
+    .content-Goi-y-tuong .card-text
+    {
+        font-weight:bold;
+
+    }
+.content2
+{
+    margin-top:60px;
+}
+.content-chuyen_bay_pho_bien
+{
+    display:flex;
+}
+    .content-chuyen_bay_pho_bien .card {
+        margin-top: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        box-shadow: 1px 1px 1px 1px #b4b4b4;
+    }
+        .content-chuyen_bay_pho_bien .card img 
+        {
+            border-radius:10px;
+        }
+        .content-chuyen_bay_pho_bien .card .card-body p {
+            font-weight: bold;
+        }

@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="~/Content/Picture/logomaybay.jpg" rel="icon" type="image/x-icon" />
+    <link href="~/Content/Picture/logomaybay.jpg" rel="icon" type="image/x-icon"/>
     <title>Trang chủ</title>
     <link href="~/Content/css/TrangChu.css" rel="stylesheet" />
 </head>
@@ -17,8 +17,200 @@
 <body>
     <div class="container">
         <img src="~/Content/Picture/hinhnenbackgroundplane.jpg" alt="Alternate Text" class="banner" />
-        <div class="card">
-            <h4>Bạn chọn máy bay nàoooo</h4>
+        <div class="d-none d-xl-block position-relative start-50 top-50 translate-middle">
+
+            <div class="p-3 form_Dien_thong_tin_chuyen_bay" style="align-items:center; margin-left:11px; width:1099px; margin-top:50px;">
+                <div class="d-flex align-items-center">
+                    <div class="form-check inp-height " style="margin-right:10px;">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                        <label class="form-check-label fw-bold fs-7" for="flexRadioDefault1">
+                            Một chiều
+                        </label>
+                    </div>
+                    <div class="form-check inp-height " style="margin-right:10px;">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label fw-bold fs-7" for="flexRadioDefault2">
+                            Khứ hồi
+                        </label>
+                    </div>
+                    <div class="form-check inp-height" style="margin-right:10px;">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label fw-bold fs-7" for="flexRadioDefault2">
+                            Nhiều thành phố
+                        </label>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center py-2">
+                    <div>
+                        <label for="exampleDataList" class="form-label fw-bold fs-8 m-0">Từ</label>
+                        <input class="form-control inp-height inp-width" list="datalistOptions" id="exampleDataList" placeholder="Thành phố">
+                        <datalist id="datalistOptions">
+                            <option value="Quy Nhơn (UIH)">
+                            <option value="Hồ Chí Minh (SGN)">
+                            <option value="Hà Nội (HAN)">
+                            <option value="Đà Nẵng (DAD)">
+                            <option value="Nha Trang (CXR)">
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="exampleDataList1" class="form-label fw-bold fs-8 m-0">Đến</label>
+                        <input class="form-control inp-height inp-width" list="datalistOptions1" id="exampleDataList1" placeholder="Thành phố">
+                        <datalist id="datalistOptions1">
+                            <option value="Phú Quốc (PQC)">
+                            <option value="Đà Lạt (DLI)">
+                            <option value="Pleiku (PXU)">
+                            <option value="Los Angeles (LAX)">
+                            <option value="Chicago (MDW)">
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="" class="fw-bold fs-8">Ngày khởi hành</label>
+                        <input type="date" name="" id="" class="form-control inp-height " />
+                    </div>
+                    <div>
+                        <label for="" class="fw-bold fs-8">Ngày về</label>
+                        <input type="date" name="" id="" class="form-control inp-height " />
+                    </div>
+                    <div>
+                        <label for="" class="fw-bold fs-8">Số lượng</label>
+                        <select class="form-select inp-height inp-width" aria-label="Default select example">
+                            <option selected>Số lượng khách hàng</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="btn btn-dark fw-bold btn-lg inp-width btnTimKiem" style="margin-left:78%">Tìm kiếm</div>
+            </div>
         </div>
+        <div class="d-block d-xl-none rounded-2 bg-cp py-3 px-3">
+
+            <div class="d-flex align-items-center">
+                <div class="form-check inp-height " style="margin-right:10px;">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <label class="form-check-label fw-bold fs-7" for="flexRadioDefault1">
+                        Một chiều
+                    </label>
+                </div>
+                <div class="form-check inp-height " style="margin-right:10px;">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <label class="form-check-label fw-bold fs-7" for="flexRadioDefault2">
+                        Khứ hồi
+                    </label>
+                </div>
+                <div class="form-check inp-height" style="margin-right:10px;">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <label class="form-check-label fw-bold fs-7" for="flexRadioDefault2">
+                        Nhiều thành phố
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label for="exampleDataList" class="form-label fw-bold fs-8 m-0">Từ</label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Thành phố">
+                <datalist id="datalistOptions">
+                    <option value="Quy Nhơn (UIH)">
+                    <option value="Hồ Chí Minh (SGN)">
+                    <option value="Hà Nội (HAN)">
+                    <option value="Đà Nẵng (DAD)">
+                    <option value="Nha Trang (CXR)">
+                </datalist>
+            </div>
+            <div>
+                <label for="exampleDataList1" class="form-label fw-bold fs-8 m-0">Đến</label>
+                <input class="form-control" list="datalistOptions1" id="exampleDataList1" placeholder="Thành phố">
+                <datalist id="datalistOptions1">
+                    <option value="Phú Quốc (PQC)">
+                    <option value="Đà Lạt (DLI)">
+                    <option value="Pleiku (PXU)">
+                    <option value="Los Angeles (LAX)">
+                    <option value="Chicago (MDW)">
+                </datalist>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <label for="" class="fw-bold fs-8 ">Ngày khởi hành</label>
+                    <input type="date" name="" id="" class="form-control inp-height date-wid " />
+                </div>
+                <div>
+                    <label for="" class="fw-bold fs-8 ">Ngày về</label>
+                    <input type="date" name="" id="" class="form-control inp-height date-wid" />
+                </div>
+            </div>
+            <div class="py-2">
+                <div>
+                    <label for="" class="fw-bold fs-8">Số lượng</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Số lượng khách hàng</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="py-3">
+                <div class="btn btn-dark fw-bold form-control btnTimKiem">Tìm kiếm</div>
+            </div>
+        </div>
+        <div class="content1">
+            <h4>Nâng tầm chuyến đi theo cách bạn muốn</h4>
+            <div class="content-Goi-y-tuong">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Content/Picture/chuyedi.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text" style="align-items:center;">Chuyến đi và trải nghiệm</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Content/Picture/hoatdong.jpg" class="card-img-top" alt="...">
+                    <div class="card-body" style="align-items:center;">
+                        <p class="card-text">Hoạt động du lịch</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Content/Picture/baohiemdulich.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body" style="align-items:center;">
+                        <p class="card-text">Bảo hiểm du lịch</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content2">
+            <h4>Địa điểm du lịch hấp dẫn</h4>
+            <div class="content-chuyen_bay_pho_bien">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Content/Picture/nhathoducba.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Hồ Chí Minh</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Content/Picture/hanoi.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Hà Nội</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Content/Picture/quynhon.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Quy Nhơn</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Content/Picture/dalat.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Đà Lạt</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="content3">
+            <h4>Đa dạng lựa chọn khách sạn</h4>
+
+        </div>
+       
     </div>
 </body>

@@ -57,7 +57,7 @@ namespace Web_Plane.Controllers.Chucnang
          }
         public ActionResult DangKy(KHACHHANG kHACHHANG)
         {
-
+            return View();
         }
          public ActionResult QuenMatKhau() 
          { 
