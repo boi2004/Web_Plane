@@ -83,7 +83,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Hiển thị:</h6>
                         <a class="collapse-item" href="#">Hãng bay</a>
-                        <a class="collapse-item" href="#">Sân bay</a>
+                        @Html.ActionLink("Sân bay", "Danhsachsanbay", "Danhsachsanbay", new { area = "Admin" }, new { @class = "collapse-item" })
                         <a class="collapse-item" href="#l">Loại vé</a>
                         <a class="collapse-item" href="#">Chuyến bay</a>
                     </div>
@@ -403,5 +403,4 @@
     <script src="~/Areas/Admin/Content/layout/js/demo/chart-pie-demo.js"></script>
 
 </body>
-<a href="~/Areas/Admin/Views/Shared/Layout-admin.cshtml">~/Areas/Admin/Views/Shared/Layout-admin.cshtml</a>
 </html>

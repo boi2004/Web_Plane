@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Web_Plane.Models.SANBAY>
+
+@{
+    ViewBag.Title = "Danhsachsanbay";
+    Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
+}
+
+<h2>Danhsachsanbay</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Themdanhsachsanbay")
+</p>
+<table class="table">
+    <tr>
+        <t>
+            @Html.DisplayNameFor(model => model.TenSanBay)
+        </t>
+        <th>
+            @Html.DisplayNameFor(model => model.QuocGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThanhPho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSanBay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuocGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThanhPho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Chinhsuadanhsachsanbay", new { id = item.IATA }) |
+            @Html.ActionLink("Xóa", "Xoadanhsachsanbay", new { id = item.IATA })
+        </td>
+    </tr>
+}
+</table>
