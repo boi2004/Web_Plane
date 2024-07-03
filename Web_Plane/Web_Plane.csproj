@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DanhsachhanghangkhongController.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhsachsanbayController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Controllers\Chucnang\ChucNangController.cs" />
@@ -2178,6 +2179,10 @@
     <Content Include="Areas\Admin\Views\Danhsachsanbay\Themdanhsachsanbay.cshtml" />
     <Content Include="Areas\Admin\Views\Danhsachsanbay\Xoadanhsachsanbay.cshtml" />
     <Content Include="Areas\Admin\Views\Danhsachsanbay\Chinhsuadanhsachsanbay.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Danhsachhanghangkhong.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Themdanhsachhanghangkhong.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Chinhsuadanhsachhanghangkhong.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Xoadanhsachhanghangkhong.cshtml" />
     <None Include="Scripts\jquery-3.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />

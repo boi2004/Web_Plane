@@ -138,6 +138,7 @@ namespace Web_Plane.Controllers.Chucnang
                 return Convert.ToBase64String(hash);
             }
         }
+        
 
     }
 }

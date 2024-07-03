@@ -17,13 +17,13 @@ namespace Web_Plane.Areas.Admin.Controllers
             return View(danhsachsanbay); // Truyền danh sách sân bay đến view
         }
 
-        // GET: Admin/Danhsachsanbay/Themdanhsachsanbay
+        // GET: Admin/Danhsachsanbay/Themdanhsachhanghangkhong
         public ActionResult Themdanhsachsanbay()
         {
             return View(); // Trả về view hiển thị form thêm sân bay mới
         }
 
-        // POST: Admin/Danhsachsanbay/Themdanhsachsanbay
+        // POST: Admin/Danhsachsanbay/Themdanhsachhanghangkhong
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Themdanhsachsanbay([Bind(Include = "IATA,TenSanBay,QuocGia,ThanhPho,DiaChi")] SANBAY sanbay)
