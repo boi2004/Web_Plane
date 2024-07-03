@@ -22,6 +22,10 @@ namespace Web_Plane.Areas.Admin.Controllers
         {
             return View(); // Trả về view hiển thị form thêm hãng hàng không mới
         }
+        public ActionResult VeMayBay()
+        {
+            return View(); // Trả về view hiển thị form thêm hãng hàng không mới
+        }
 
         // POST: Admin/Danhsachhanghangkhong/Themdanhsachhanghangkhong
         [HttpPost]
