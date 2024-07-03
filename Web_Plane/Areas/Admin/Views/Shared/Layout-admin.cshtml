@@ -82,7 +82,7 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Hiển thị:</h6>
-                        <a class="collapse-item" href="#">Hãng bay</a>
+                        @Html.ActionLink("Hãng hàng không", "Danhsachhanghangkhong", "Danhsachhanghangkhong", new { area = "Admin" }, new { @class = "collapse-item" })
                         @Html.ActionLink("Sân bay", "Danhsachsanbay", "Danhsachsanbay", new { area = "Admin" }, new { @class = "collapse-item" })
                         <a class="collapse-item" href="#l">Loại vé</a>
                         <a class="collapse-item" href="#">Chuyến bay</a>
