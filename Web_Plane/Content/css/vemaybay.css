@@ -1,0 +1,143 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    font-size: 16px; /* Base font size */
+}
+
+.ve_may_bay {
+    width: 1200px;
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+.tieu_de {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .tieu_de .tieu_de_phai {
+        padding-top: 30px;
+        color: #49caaf;
+    }
+
+.duong_line {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.ve_may_bay .noi_dung_ve .noi_dung_ve_tren,
+.ve_may_bay .noi_dung_ve .noi_dung_ve_duoi {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+    .ve_may_bay .noi_dung_ve .noi_dung_ve_tren .content,
+    .ve_may_bay .noi_dung_ve .noi_dung_ve_duoi .content {
+        flex: 1;
+        padding-left: 110px;
+    }
+
+        .ve_may_bay .noi_dung_ve .noi_dung_ve_tren .content h5,
+        .ve_may_bay .noi_dung_ve .noi_dung_ve_duoi .content h5 {
+            font-size: 1rem;
+        }
+
+.gia_tien {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .gia_tien .so_tien {
+        text-align: right;
+    }
+
+.loi_cam_on p {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust base font size for smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Reduce size of h1 */
+    }
+
+    h2 {
+        font-size: 1.75rem; /* Reduce size of h2 */
+    }
+
+    h3 {
+        font-size: 1.5rem; /* Reduce size of h3 */
+    }
+
+    h4 {
+        font-size: 1.25rem; /* Reduce size of h4 */
+    }
+
+    h5 {
+        font-size: 1rem; /* Reduce size of h5 */
+    }
+
+    h6 {
+        font-size: 0.875rem; /* Reduce size of h6 */
+    }
+
+    p {
+        font-size: 0.75rem; /* Reduce size of paragraphs */
+    }
+
+    .ve_may_bay {
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .tieu_de {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .tieu_de .tieu_de_phai {
+            padding-top: 10px;
+            padding-left: 0;
+        }
+
+    .ve_may_bay .noi_dung_ve .noi_dung_ve_tren,
+    .ve_may_bay .noi_dung_ve .noi_dung_ve_duoi {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 0;
+    }
+
+        .ve_may_bay .noi_dung_ve .noi_dung_ve_tren .content,
+        .ve_may_bay .noi_dung_ve .noi_dung_ve_duoi .content {
+            padding-left: 0;
+            width: 100%;
+        }
+
+    .gia_tien .so_tien {
+        padding-left: 0;
+    }
+
+    /* Ensure consistent header size */
+    .ve_may_bay .noi_dung_ve .noi_dung_ve_duoi .content h5 {
+        font-size: 1rem;
+    }
+}
