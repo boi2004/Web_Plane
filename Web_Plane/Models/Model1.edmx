@@ -115,23 +115,13 @@
           <Property Name="ThanhPho" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="DiaChi" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="VeMayBay">
           <Key>
             <PropertyRef Name="MaVe" />
           </Key>
           <Property Name="MaVe" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="Cua" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="ChoNgoi" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ChoNgoi" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="TrangThai" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="LoaiHanhLy" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="ThanhTien" Type="int" Nullable="false" />
@@ -139,7 +129,7 @@
           <Property Name="CCCD" Type="char" MaxLength="12" />
           <Property Name="MaLoaiVe" Type="char" MaxLength="2" Nullable="false" />
         </EntityType>
-        <Association Name="FK__CATCANH__IATA__59063A47">
+        <Association Name="FK__CATCANH__IATA__60A75C0F">
           <End Role="SANBAY" Type="Self.SANBAY" Multiplicity="1" />
           <End Role="CATCANH" Type="Self.CATCANH" Multiplicity="*" />
           <ReferentialConstraint>
@@ -151,7 +141,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CATCANH__MaChang__5812160E">
+        <Association Name="FK__CATCANH__MaChang__619B8048">
           <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="1" />
           <End Role="CATCANH" Type="Self.CATCANH" Multiplicity="*" />
           <ReferentialConstraint>
@@ -163,7 +153,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHANGBAY__IDCB__5070F446">
+        <Association Name="FK__CHANGBAY__IDCB__6477ECF3">
           <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
           <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -175,7 +165,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHANGBAY__Sohieu__5165187F">
+        <Association Name="FK__CHANGBAY__Sohieu__656C112C">
           <End Role="MAYBAY" Type="Self.MAYBAY" Multiplicity="1" />
           <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -187,7 +177,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHUYENBAY__IDHK__48CFD27E">
+        <Association Name="FK__CHUYENBAY__IDHK__66603565">
           <End Role="HANGHANGKHONG" Type="Self.HANGHANGKHONG" Multiplicity="1" />
           <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -199,7 +189,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CO__IDCB__5BE2A6F2">
+        <Association Name="FK__CO__IDCB__628FA481">
           <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
           <End Role="CO" Type="Self.CO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -211,7 +201,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CO__MaLoaiVe__5CD6CB2B">
+        <Association Name="FK__CO__MaLoaiVe__6383C8BA">
           <End Role="LOAIVE" Type="Self.LOAIVE" Multiplicity="1" />
           <End Role="CO" Type="Self.CO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -223,7 +213,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DANGKY__CCCD__44FF419A">
+        <Association Name="FK__DANGKY__CCCD__6754599E">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
           <End Role="DANGKY" Type="Self.DANGKY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -235,7 +225,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DANGKY__MaDV__45F365D3">
+        <Association Name="FK__DANGKY__MaDV__68487DD7">
           <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
           <End Role="DANGKY" Type="Self.DANGKY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -247,7 +237,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DAP__IATA__5535A963">
+        <Association Name="FK__DAP__IATA__693CA210">
           <End Role="SANBAY" Type="Self.SANBAY" Multiplicity="1" />
           <End Role="DAP" Type="Self.DAP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -259,7 +249,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DAP__MaChangBay__5441852A">
+        <Association Name="FK__DAP__MaChangBay__6A30C649">
           <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="1" />
           <End Role="DAP" Type="Self.DAP" Multiplicity="*" />
           <ReferentialConstraint>
@@ -271,7 +261,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MAYBAY__IDHK__3E52440B">
+        <Association Name="FK__MAYBAY__IDHK__6B24EA82">
           <End Role="HANGHANGKHONG" Type="Self.HANGHANGKHONG" Multiplicity="1" />
           <End Role="MAYBAY" Type="Self.MAYBAY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -283,7 +273,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VeMayBay__CCCD__4CA06362">
+        <Association Name="FK__VeMayBay__CCCD__6C190EBB">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
           <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
           <ReferentialConstraint>
@@ -295,7 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VeMayBay__IDCB__4BAC3F29">
+        <Association Name="FK__VeMayBay__IDCB__6D0D32F4">
           <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
           <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
           <ReferentialConstraint>
@@ -307,7 +297,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VeMayBay__MaLoai__4D94879B">
+        <Association Name="FK__VeMayBay__MaLoai__6E01572D">
           <End Role="LOAIVE" Type="Self.LOAIVE" Multiplicity="1" />
           <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
           <ReferentialConstraint>
@@ -332,65 +322,64 @@
           <EntitySet Name="LOAIVE" EntityType="Self.LOAIVE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MAYBAY" EntityType="Self.MAYBAY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SANBAY" EntityType="Self.SANBAY" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VeMayBay" EntityType="Self.VeMayBay" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__CATCANH__IATA__59063A47" Association="Self.FK__CATCANH__IATA__59063A47">
+          <AssociationSet Name="FK__CATCANH__IATA__60A75C0F" Association="Self.FK__CATCANH__IATA__60A75C0F">
             <End Role="SANBAY" EntitySet="SANBAY" />
             <End Role="CATCANH" EntitySet="CATCANH" />
           </AssociationSet>
-          <AssociationSet Name="FK__CATCANH__MaChang__5812160E" Association="Self.FK__CATCANH__MaChang__5812160E">
+          <AssociationSet Name="FK__CATCANH__MaChang__619B8048" Association="Self.FK__CATCANH__MaChang__619B8048">
             <End Role="CHANGBAY" EntitySet="CHANGBAY" />
             <End Role="CATCANH" EntitySet="CATCANH" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHANGBAY__IDCB__5070F446" Association="Self.FK__CHANGBAY__IDCB__5070F446">
+          <AssociationSet Name="FK__CHANGBAY__IDCB__6477ECF3" Association="Self.FK__CHANGBAY__IDCB__6477ECF3">
             <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
             <End Role="CHANGBAY" EntitySet="CHANGBAY" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHANGBAY__Sohieu__5165187F" Association="Self.FK__CHANGBAY__Sohieu__5165187F">
+          <AssociationSet Name="FK__CHANGBAY__Sohieu__656C112C" Association="Self.FK__CHANGBAY__Sohieu__656C112C">
             <End Role="MAYBAY" EntitySet="MAYBAY" />
             <End Role="CHANGBAY" EntitySet="CHANGBAY" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHUYENBAY__IDHK__48CFD27E" Association="Self.FK__CHUYENBAY__IDHK__48CFD27E">
+          <AssociationSet Name="FK__CHUYENBAY__IDHK__66603565" Association="Self.FK__CHUYENBAY__IDHK__66603565">
             <End Role="HANGHANGKHONG" EntitySet="HANGHANGKHONG" />
             <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
           </AssociationSet>
-          <AssociationSet Name="FK__CO__IDCB__5BE2A6F2" Association="Self.FK__CO__IDCB__5BE2A6F2">
+          <AssociationSet Name="FK__CO__IDCB__628FA481" Association="Self.FK__CO__IDCB__628FA481">
             <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
             <End Role="CO" EntitySet="CO" />
           </AssociationSet>
-          <AssociationSet Name="FK__CO__MaLoaiVe__5CD6CB2B" Association="Self.FK__CO__MaLoaiVe__5CD6CB2B">
+          <AssociationSet Name="FK__CO__MaLoaiVe__6383C8BA" Association="Self.FK__CO__MaLoaiVe__6383C8BA">
             <End Role="LOAIVE" EntitySet="LOAIVE" />
             <End Role="CO" EntitySet="CO" />
           </AssociationSet>
-          <AssociationSet Name="FK__DANGKY__CCCD__44FF419A" Association="Self.FK__DANGKY__CCCD__44FF419A">
+          <AssociationSet Name="FK__DANGKY__CCCD__6754599E" Association="Self.FK__DANGKY__CCCD__6754599E">
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
             <End Role="DANGKY" EntitySet="DANGKY" />
           </AssociationSet>
-          <AssociationSet Name="FK__DANGKY__MaDV__45F365D3" Association="Self.FK__DANGKY__MaDV__45F365D3">
+          <AssociationSet Name="FK__DANGKY__MaDV__68487DD7" Association="Self.FK__DANGKY__MaDV__68487DD7">
             <End Role="DICHVU" EntitySet="DICHVU" />
             <End Role="DANGKY" EntitySet="DANGKY" />
           </AssociationSet>
-          <AssociationSet Name="FK__DAP__IATA__5535A963" Association="Self.FK__DAP__IATA__5535A963">
+          <AssociationSet Name="FK__DAP__IATA__693CA210" Association="Self.FK__DAP__IATA__693CA210">
             <End Role="SANBAY" EntitySet="SANBAY" />
             <End Role="DAP" EntitySet="DAP" />
           </AssociationSet>
-          <AssociationSet Name="FK__DAP__MaChangBay__5441852A" Association="Self.FK__DAP__MaChangBay__5441852A">
+          <AssociationSet Name="FK__DAP__MaChangBay__6A30C649" Association="Self.FK__DAP__MaChangBay__6A30C649">
             <End Role="CHANGBAY" EntitySet="CHANGBAY" />
             <End Role="DAP" EntitySet="DAP" />
           </AssociationSet>
-          <AssociationSet Name="FK__MAYBAY__IDHK__3E52440B" Association="Self.FK__MAYBAY__IDHK__3E52440B">
+          <AssociationSet Name="FK__MAYBAY__IDHK__6B24EA82" Association="Self.FK__MAYBAY__IDHK__6B24EA82">
             <End Role="HANGHANGKHONG" EntitySet="HANGHANGKHONG" />
             <End Role="MAYBAY" EntitySet="MAYBAY" />
           </AssociationSet>
-          <AssociationSet Name="FK__VeMayBay__CCCD__4CA06362" Association="Self.FK__VeMayBay__CCCD__4CA06362">
+          <AssociationSet Name="FK__VeMayBay__CCCD__6C190EBB" Association="Self.FK__VeMayBay__CCCD__6C190EBB">
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
             <End Role="VeMayBay" EntitySet="VeMayBay" />
           </AssociationSet>
-          <AssociationSet Name="FK__VeMayBay__IDCB__4BAC3F29" Association="Self.FK__VeMayBay__IDCB__4BAC3F29">
+          <AssociationSet Name="FK__VeMayBay__IDCB__6D0D32F4" Association="Self.FK__VeMayBay__IDCB__6D0D32F4">
             <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
             <End Role="VeMayBay" EntitySet="VeMayBay" />
           </AssociationSet>
-          <AssociationSet Name="FK__VeMayBay__MaLoai__4D94879B" Association="Self.FK__VeMayBay__MaLoai__4D94879B">
+          <AssociationSet Name="FK__VeMayBay__MaLoai__6E01572D" Association="Self.FK__VeMayBay__MaLoai__6E01572D">
             <End Role="LOAIVE" EntitySet="LOAIVE" />
             <End Role="VeMayBay" EntitySet="VeMayBay" />
           </AssociationSet>
@@ -407,8 +396,8 @@
           <Property Name="MaChangBay" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="IDCB" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Sohieu" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK__CHANGBAY__IDCB__5070F446" FromRole="CHANGBAY" ToRole="CHUYENBAY" />
-          <NavigationProperty Name="MAYBAY" Relationship="Self.FK__CHANGBAY__Sohieu__5165187F" FromRole="CHANGBAY" ToRole="MAYBAY" />
+          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK__CHANGBAY__IDCB__6477ECF3" FromRole="CHANGBAY" ToRole="CHUYENBAY" />
+          <NavigationProperty Name="MAYBAY" Relationship="Self.FK__CHANGBAY__Sohieu__656C112C" FromRole="CHANGBAY" ToRole="MAYBAY" />
           <NavigationProperty Name="SANBAYs" Relationship="Self.CATCANH" FromRole="CHANGBAY" ToRole="SANBAY" />
           <NavigationProperty Name="SANBAYs1" Relationship="Self.DAP" FromRole="CHANGBAY" ToRole="SANBAY" />
         </EntityType>
@@ -421,10 +410,10 @@
           <Property Name="ThoiGianBay" Type="Double" Nullable="false" />
           <Property Name="LoaiCB" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="IDHK" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CHANGBAYs" Relationship="Self.FK__CHANGBAY__IDCB__5070F446" FromRole="CHUYENBAY" ToRole="CHANGBAY" />
-          <NavigationProperty Name="HANGHANGKHONG" Relationship="Self.FK__CHUYENBAY__IDHK__48CFD27E" FromRole="CHUYENBAY" ToRole="HANGHANGKHONG" />
-          <NavigationProperty Name="COes" Relationship="Self.FK__CO__IDCB__5BE2A6F2" FromRole="CHUYENBAY" ToRole="CO" />
-          <NavigationProperty Name="VeMayBays" Relationship="Self.FK__VeMayBay__IDCB__4BAC3F29" FromRole="CHUYENBAY" ToRole="VeMayBay" />
+          <NavigationProperty Name="CHANGBAYs" Relationship="Self.FK__CHANGBAY__IDCB__6477ECF3" FromRole="CHUYENBAY" ToRole="CHANGBAY" />
+          <NavigationProperty Name="HANGHANGKHONG" Relationship="Self.FK__CHUYENBAY__IDHK__66603565" FromRole="CHUYENBAY" ToRole="HANGHANGKHONG" />
+          <NavigationProperty Name="COes" Relationship="Self.FK__CO__IDCB__628FA481" FromRole="CHUYENBAY" ToRole="CO" />
+          <NavigationProperty Name="VeMayBays" Relationship="Self.FK__VeMayBay__IDCB__6D0D32F4" FromRole="CHUYENBAY" ToRole="VeMayBay" />
         </EntityType>
         <EntityType Name="CO">
           <Key>
@@ -434,8 +423,8 @@
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="IDCB" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="MaLoaiVe" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK__CO__IDCB__5BE2A6F2" FromRole="CO" ToRole="CHUYENBAY" />
-          <NavigationProperty Name="LOAIVE" Relationship="Self.FK__CO__MaLoaiVe__5CD6CB2B" FromRole="CO" ToRole="LOAIVE" />
+          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK__CO__IDCB__628FA481" FromRole="CO" ToRole="CHUYENBAY" />
+          <NavigationProperty Name="LOAIVE" Relationship="Self.FK__CO__MaLoaiVe__6383C8BA" FromRole="CO" ToRole="LOAIVE" />
         </EntityType>
         <EntityType Name="DICHVU">
           <Key>
@@ -455,8 +444,8 @@
           <Property Name="IDHK" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TenHang" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IMG" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CHUYENBAYs" Relationship="Self.FK__CHUYENBAY__IDHK__48CFD27E" FromRole="HANGHANGKHONG" ToRole="CHUYENBAY" />
-          <NavigationProperty Name="MAYBAYs" Relationship="Self.FK__MAYBAY__IDHK__3E52440B" FromRole="HANGHANGKHONG" ToRole="MAYBAY" />
+          <NavigationProperty Name="CHUYENBAYs" Relationship="Self.FK__CHUYENBAY__IDHK__66603565" FromRole="HANGHANGKHONG" ToRole="CHUYENBAY" />
+          <NavigationProperty Name="MAYBAYs" Relationship="Self.FK__MAYBAY__IDHK__6B24EA82" FromRole="HANGHANGKHONG" ToRole="MAYBAY" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -473,7 +462,7 @@
           <Property Name="QuocTich" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IMG" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="VeMayBays" Relationship="Self.FK__VeMayBay__CCCD__4CA06362" FromRole="KHACHHANG" ToRole="VeMayBay" />
+          <NavigationProperty Name="VeMayBays" Relationship="Self.FK__VeMayBay__CCCD__6C190EBB" FromRole="KHACHHANG" ToRole="VeMayBay" />
           <NavigationProperty Name="DICHVUs" Relationship="Self.DANGKY" FromRole="KHACHHANG" ToRole="DICHVU" />
         </EntityType>
         <EntityType Name="LOAIVE">
@@ -483,8 +472,8 @@
           <Property Name="MaLoaiVe" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="GiaVe" Type="Int32" Nullable="false" />
           <Property Name="TenLoaiVe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="COes" Relationship="Self.FK__CO__MaLoaiVe__5CD6CB2B" FromRole="LOAIVE" ToRole="CO" />
-          <NavigationProperty Name="VeMayBays" Relationship="Self.FK__VeMayBay__MaLoai__4D94879B" FromRole="LOAIVE" ToRole="VeMayBay" />
+          <NavigationProperty Name="COes" Relationship="Self.FK__CO__MaLoaiVe__6383C8BA" FromRole="LOAIVE" ToRole="CO" />
+          <NavigationProperty Name="VeMayBays" Relationship="Self.FK__VeMayBay__MaLoai__6E01572D" FromRole="LOAIVE" ToRole="VeMayBay" />
         </EntityType>
         <EntityType Name="MAYBAY">
           <Key>
@@ -492,8 +481,8 @@
           </Key>
           <Property Name="Sohieu" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="IDHK" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CHANGBAYs" Relationship="Self.FK__CHANGBAY__Sohieu__5165187F" FromRole="MAYBAY" ToRole="CHANGBAY" />
-          <NavigationProperty Name="HANGHANGKHONG" Relationship="Self.FK__MAYBAY__IDHK__3E52440B" FromRole="MAYBAY" ToRole="HANGHANGKHONG" />
+          <NavigationProperty Name="CHANGBAYs" Relationship="Self.FK__CHANGBAY__Sohieu__656C112C" FromRole="MAYBAY" ToRole="CHANGBAY" />
+          <NavigationProperty Name="HANGHANGKHONG" Relationship="Self.FK__MAYBAY__IDHK__6B24EA82" FromRole="MAYBAY" ToRole="HANGHANGKHONG" />
         </EntityType>
         <EntityType Name="SANBAY">
           <Key>
@@ -507,34 +496,24 @@
           <NavigationProperty Name="CHANGBAYs" Relationship="Self.CATCANH" FromRole="SANBAY" ToRole="CHANGBAY" />
           <NavigationProperty Name="CHANGBAYs1" Relationship="Self.DAP" FromRole="SANBAY" ToRole="CHANGBAY" />
         </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="VeMayBay">
           <Key>
             <PropertyRef Name="MaVe" />
           </Key>
           <Property Name="MaVe" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Cua" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ChoNgoi" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ChoNgoi" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TrangThai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="LoaiHanhLy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ThanhTien" Type="Int32" Nullable="false" />
           <Property Name="IDCB" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="CCCD" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="MaLoaiVe" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK__VeMayBay__IDCB__4BAC3F29" FromRole="VeMayBay" ToRole="CHUYENBAY" />
-          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__VeMayBay__CCCD__4CA06362" FromRole="VeMayBay" ToRole="KHACHHANG" />
-          <NavigationProperty Name="LOAIVE" Relationship="Self.FK__VeMayBay__MaLoai__4D94879B" FromRole="VeMayBay" ToRole="LOAIVE" />
+          <NavigationProperty Name="CHUYENBAY" Relationship="Self.FK__VeMayBay__IDCB__6D0D32F4" FromRole="VeMayBay" ToRole="CHUYENBAY" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__VeMayBay__CCCD__6C190EBB" FromRole="VeMayBay" ToRole="KHACHHANG" />
+          <NavigationProperty Name="LOAIVE" Relationship="Self.FK__VeMayBay__MaLoai__6E01572D" FromRole="VeMayBay" ToRole="LOAIVE" />
         </EntityType>
-        <Association Name="FK__CHANGBAY__IDCB__5070F446">
+        <Association Name="FK__CHANGBAY__IDCB__6477ECF3">
           <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
           <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -546,7 +525,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHANGBAY__Sohieu__5165187F">
+        <Association Name="FK__CHANGBAY__Sohieu__656C112C">
           <End Role="MAYBAY" Type="Self.MAYBAY" Multiplicity="1" />
           <End Role="CHANGBAY" Type="Self.CHANGBAY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -558,7 +537,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHUYENBAY__IDHK__48CFD27E">
+        <Association Name="FK__CHUYENBAY__IDHK__66603565">
           <End Role="HANGHANGKHONG" Type="Self.HANGHANGKHONG" Multiplicity="1" />
           <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -570,7 +549,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CO__IDCB__5BE2A6F2">
+        <Association Name="FK__CO__IDCB__628FA481">
           <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
           <End Role="CO" Type="Self.CO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -582,7 +561,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VeMayBay__IDCB__4BAC3F29">
+        <Association Name="FK__VeMayBay__IDCB__6D0D32F4">
           <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
           <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
           <ReferentialConstraint>
@@ -594,7 +573,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CO__MaLoaiVe__5CD6CB2B">
+        <Association Name="FK__CO__MaLoaiVe__6383C8BA">
           <End Role="LOAIVE" Type="Self.LOAIVE" Multiplicity="1" />
           <End Role="CO" Type="Self.CO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -606,7 +585,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MAYBAY__IDHK__3E52440B">
+        <Association Name="FK__MAYBAY__IDHK__6B24EA82">
           <End Role="HANGHANGKHONG" Type="Self.HANGHANGKHONG" Multiplicity="1" />
           <End Role="MAYBAY" Type="Self.MAYBAY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -618,7 +597,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VeMayBay__CCCD__4CA06362">
+        <Association Name="FK__VeMayBay__CCCD__6C190EBB">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
           <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
           <ReferentialConstraint>
@@ -630,7 +609,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VeMayBay__MaLoai__4D94879B">
+        <Association Name="FK__VeMayBay__MaLoai__6E01572D">
           <End Role="LOAIVE" Type="Self.LOAIVE" Multiplicity="1" />
           <End Role="VeMayBay" Type="Self.VeMayBay" Multiplicity="*" />
           <ReferentialConstraint>
@@ -664,41 +643,40 @@
           <EntitySet Name="LOAIVEs" EntityType="Self.LOAIVE" />
           <EntitySet Name="MAYBAYs" EntityType="Self.MAYBAY" />
           <EntitySet Name="SANBAYs" EntityType="Self.SANBAY" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="VeMayBays" EntityType="Self.VeMayBay" />
-          <AssociationSet Name="FK__CHANGBAY__IDCB__5070F446" Association="Self.FK__CHANGBAY__IDCB__5070F446">
+          <AssociationSet Name="FK__CHANGBAY__IDCB__6477ECF3" Association="Self.FK__CHANGBAY__IDCB__6477ECF3">
             <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />
             <End Role="CHANGBAY" EntitySet="CHANGBAYs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHANGBAY__Sohieu__5165187F" Association="Self.FK__CHANGBAY__Sohieu__5165187F">
+          <AssociationSet Name="FK__CHANGBAY__Sohieu__656C112C" Association="Self.FK__CHANGBAY__Sohieu__656C112C">
             <End Role="MAYBAY" EntitySet="MAYBAYs" />
             <End Role="CHANGBAY" EntitySet="CHANGBAYs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHUYENBAY__IDHK__48CFD27E" Association="Self.FK__CHUYENBAY__IDHK__48CFD27E">
+          <AssociationSet Name="FK__CHUYENBAY__IDHK__66603565" Association="Self.FK__CHUYENBAY__IDHK__66603565">
             <End Role="HANGHANGKHONG" EntitySet="HANGHANGKHONGs" />
             <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CO__IDCB__5BE2A6F2" Association="Self.FK__CO__IDCB__5BE2A6F2">
+          <AssociationSet Name="FK__CO__IDCB__628FA481" Association="Self.FK__CO__IDCB__628FA481">
             <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />
             <End Role="CO" EntitySet="COes" />
           </AssociationSet>
-          <AssociationSet Name="FK__VeMayBay__IDCB__4BAC3F29" Association="Self.FK__VeMayBay__IDCB__4BAC3F29">
+          <AssociationSet Name="FK__VeMayBay__IDCB__6D0D32F4" Association="Self.FK__VeMayBay__IDCB__6D0D32F4">
             <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />
             <End Role="VeMayBay" EntitySet="VeMayBays" />
           </AssociationSet>
-          <AssociationSet Name="FK__CO__MaLoaiVe__5CD6CB2B" Association="Self.FK__CO__MaLoaiVe__5CD6CB2B">
+          <AssociationSet Name="FK__CO__MaLoaiVe__6383C8BA" Association="Self.FK__CO__MaLoaiVe__6383C8BA">
             <End Role="LOAIVE" EntitySet="LOAIVEs" />
             <End Role="CO" EntitySet="COes" />
           </AssociationSet>
-          <AssociationSet Name="FK__MAYBAY__IDHK__3E52440B" Association="Self.FK__MAYBAY__IDHK__3E52440B">
+          <AssociationSet Name="FK__MAYBAY__IDHK__6B24EA82" Association="Self.FK__MAYBAY__IDHK__6B24EA82">
             <End Role="HANGHANGKHONG" EntitySet="HANGHANGKHONGs" />
             <End Role="MAYBAY" EntitySet="MAYBAYs" />
           </AssociationSet>
-          <AssociationSet Name="FK__VeMayBay__CCCD__4CA06362" Association="Self.FK__VeMayBay__CCCD__4CA06362">
+          <AssociationSet Name="FK__VeMayBay__CCCD__6C190EBB" Association="Self.FK__VeMayBay__CCCD__6C190EBB">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
             <End Role="VeMayBay" EntitySet="VeMayBays" />
           </AssociationSet>
-          <AssociationSet Name="FK__VeMayBay__MaLoai__4D94879B" Association="Self.FK__VeMayBay__MaLoai__4D94879B">
+          <AssociationSet Name="FK__VeMayBay__MaLoai__6E01572D" Association="Self.FK__VeMayBay__MaLoai__6E01572D">
             <End Role="LOAIVE" EntitySet="LOAIVEs" />
             <End Role="VeMayBay" EntitySet="VeMayBays" />
           </AssociationSet>
@@ -812,17 +790,6 @@
                 <ScalarProperty Name="QuocGia" ColumnName="QuocGia" />
                 <ScalarProperty Name="ThanhPho" ColumnName="ThanhPho" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DBMayBayModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
