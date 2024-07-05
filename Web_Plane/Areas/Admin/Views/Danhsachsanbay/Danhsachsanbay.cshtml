@@ -5,16 +5,16 @@
     Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
 }
 
-<h2>Danhsachsanbay</h2>
+<h2>Danh sách sân bay</h2>
 
 <p>
     @Html.ActionLink("Tạo mới", "Themdanhsachsanbay")
 </p>
 <table class="table">
     <tr>
-        <t>
+        <th>
             @Html.DisplayNameFor(model => model.TenSanBay)
-        </t>
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.QuocGia)
         </th>
@@ -24,7 +24,7 @@
         <th>
             @Html.DisplayNameFor(model => model.DiaChi)
         </th>
-        <th></th>
+        
     </tr>
 
 @foreach (var item in Model) {

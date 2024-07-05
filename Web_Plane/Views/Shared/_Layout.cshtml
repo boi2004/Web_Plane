@@ -15,7 +15,7 @@
 <body>
     <!-- Header -->
     <header>
-        <a href="#" class="logo"><span>Logo</span></a>
+        <a href="#" class="logo"><span>Bayvivu</span></a>
         <ul class="navbarr">
             <li><a href="#">Trang chủ</a></li>
             <li><a href="#">Vé máy bay</a></li>
@@ -26,9 +26,9 @@
             <a href="#" class="user"><i class='bx bxs-user'></i>Đăng nhập</a>
             <a href="#">Đăng ký</a>
             <div class="bx bx-menu" id="menu-icons"></div>
-            <img src="~/Content/Picture/moon.png" alt="Alternate Text" />
+            <button id="switch-mode" style="outline:none; border:none; background:none; cursor:pointer;"><i class='bx bxs-moon' style="font-size:21px;"></i></button>
         </div>
-        
+
     </header>
 
     <!-- Main Content -->
@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="footer-col">
                     <img src="~/Content/Picture/logomaybay.jpg" alt="Alternate Text" style=" width:100px; position:relative; border-radius:5px; height:auto; " />
-                    <h5 style="margin-top:20px; color:#ffffff;">Công ty trách nhiệm hữu hạn và du lịch BayViVu</h5>
+                    <h5 style="margin-top:20px; color:#ffffff;">Công ty trách nhiệm hữu hạn và du lịch Bayvivu</h5>
                     <p style="margin-top:20px; color:#ffffff;">828 Sư Vạn Hạnh, phường 15, quận 10, tp Hồ Chí Minh</p>
 
                 </div>
@@ -76,13 +76,23 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-col"style="color:#808080; margin-left:460px; margin-top:70px;">
-                <p >Copyright BayViVu.</p>
-                </div>
+            <div class="footer-col" style="color:#808080; margin-left:460px; margin-top:70px;">
+                <p>Copyright &copy; Bayvivu.</p>
             </div>
-</footer>
+        </div>
+    </footer>
 
- <!--JS link-->
+    <!--JS link-->
     <script type="text/javascript" src="~/Content/js/Headermenu.js"></script>
+    <script>
+        const body = document.body;
+        const switch_mode = document.querySelector('#switch-mode i');
+        switch_mode.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            switch_mode.classList.toggle('bx bxs-moon');
+            switch_mode.classList.toggle('bx bxs-sun');
+        });
+    </script>
+
 </body>
 </html>
