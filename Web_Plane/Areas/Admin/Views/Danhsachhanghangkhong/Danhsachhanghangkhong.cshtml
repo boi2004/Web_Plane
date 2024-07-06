@@ -47,10 +47,9 @@
                 @Html.DisplayFor(modelItem => item.IMG)
             </td>
             <td>
-                @Html.ActionLink("Chỉnh sửa", "Chinhsuadanhsachhanghangkhong", new { id = item.IDHK }) |
-                @Html.ActionLink("Xóa", "Xoadanhsachhanghangkhong", new { id = item.IDHK })
-            </td>
-        </tr>
+                @Html.ActionLink("Sửa", "Chinhsuadanhsachhanghangkhong", new { id = item.IDHK }) |
+                @Html.ActionLink("Chi tiết", "Chinhsuadanhsachhanghangkhong", new { id = item.IDHK }) |
+</tr>
         counter++;
     }
 

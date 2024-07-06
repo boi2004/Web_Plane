@@ -1,20 +1,20 @@
 ﻿@model Web_Plane.Models.HANGHANGKHONG
 
 @{
-    ViewBag.Title = "Chỉnh sửa hãng hàng không";
+    ViewBag.Title = "Chinhsuadanhsachhanghangkhong";
     Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
 }
 
-<h2>Chỉnh sửa hãng hàng không</h2>
+<h2>Chinhsuadanhsachhanghangkhong</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
-        <h4>Thông tin hãng hàng không</h4>
+        <h4>HANGHANGKHONG</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.IDHK)
 
         <div class="form-group">
@@ -35,9 +35,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <button type="submit" class="btn btn-primary">Lưu</button>
-                @Html.ActionLink("Trở về danh sách", "Danhsachhanghangkhong", null, new { @class = "btn btn-secondary" })
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
+
+<div>
+    @Html.ActionLink("Back to List", "Danhsachkhachhang")
+</div>
