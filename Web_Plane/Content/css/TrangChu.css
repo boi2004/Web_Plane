@@ -3,6 +3,9 @@
     padding: 0;
     margin: 0;
 }
+body {
+    font-family: 'Poppins', sans-serif;
+}
 
 .banner {
     width: 100%;
@@ -143,7 +146,7 @@
     margin-bottom:20px;
 }
 .nhan_xet_cua_khach_hang h2 {
-    padding-left: 380px;
+    padding-left: 250px;
     font-weight: bold;
     padding-top: 35px;
     padding-bottom: 30px;
@@ -153,11 +156,11 @@
     position: relative;
     width: 100%;
     height: auto;
-    background: #0099FF;
+    background: #49caaf;
     border-radius: 20px;
 }
 .card_nhan_xet_khach_hang
-{display:flex;
+{
  margin-left:130px;
 }
     .card_nhan_xet_khach_hang .card {
@@ -173,3 +176,52 @@
         backdrop-filter: blur(80px);
         border: 2px solid rgba(255,255,255,.2);
     }
+
+    /*css cho dark mode*/
+body.dark {
+    background: #000;
+    color: #fff;
+    font-family:'Poppins', sans-serif;
+}
+body.dark header
+{
+    background:#3f3e3e;
+    color:#fff;
+}
+    body.dark header #switch-mode
+    {
+        color:#fff;
+    }
+    body.dark header .navbarr a
+    {
+        color:#fff;
+    }
+        body.dark header .navbarr a:hover {
+            color: #49caaf;
+        }
+    body.dark header .main a{
+        color: #fff;
+    }
+    body.dark header .main a:hover {
+        color: #49caaf;
+    }
+    body.dark header .main a i 
+    {
+        color:#fff;
+    }
+        body.dark header .main a i {
+            color: #fff;
+        }
+        body.dark header .main a i:hover {
+            color: #49caaf;
+        }
+    body.dark .nhan_xet_cua_khach_hang
+    {
+        background:#333;
+    }
+    body.dark .card {
+        background: #b4b4b4;
+    }
+
+ 
+        
