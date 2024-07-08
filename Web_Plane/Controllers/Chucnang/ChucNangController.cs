@@ -30,7 +30,7 @@ namespace Web_Plane.Controllers.Chucnang
                 {
                     // Đăng nhập thành công với vai trò admin
                     Session["IsAdmin"] = true;
-                    return RedirectToAction("Danhsachsanbay", "HomeAdmin", new { area = "Admin" });
+                    return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
                     // return RedirectToAction("TrangChu", "Home");
                 }
 

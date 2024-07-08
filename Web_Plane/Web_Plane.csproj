@@ -2191,6 +2191,7 @@
     <Content Include="Areas\Admin\Views\Danhsachkhachhang\Danhsachkhachhang.cshtml" />
     <Content Include="Areas\Admin\Views\Danhsachkhachhang\Themdanhsachkhachhang.cshtml" />
     <Content Include="Areas\Admin\Views\Danhsachkhachhang\Chinhsuadanhsachkhachhang.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachkhachhang\Xoadanhsachkhachhang.cshtml" />
     <None Include="Scripts\jquery-3.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />

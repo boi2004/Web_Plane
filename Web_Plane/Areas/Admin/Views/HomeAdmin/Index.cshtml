@@ -3,6 +3,150 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
 
-<h2>Đây là trang chủ admin</h2>
+        .admin-home {
+            margin-top: 50px;
+        }
 
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .stat-card {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .contact-card {
+            background-color: #17a2b8;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container admin-home">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Đây là trang chủ admin</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Chào mừng bạn đến với trang quản trị. Hãy chọn các mục trong menu để quản lý các chức năng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="card-header">
+                        <h3>Tổng số khách hàng</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>145124</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="card-header">
+                        <h3>Tổng số vé đã bán</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>5678</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stat-card">
+                    <div class="card-header">
+                        <h3>Tổng doanh thu</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>$123,456,412</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Biểu đồ thống kê</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Thêm mã nhúng biểu đồ thống kê tại đây -->
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card contact-card">
+                    <div class="card-header">
+                        <h3>Thông tin liên hệ</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Email: support@example.com</p>
+                        <p>Phone: +123 456 7890</p>
+                        <p>Address: 123 Main Street, City, Country</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thêm thư viện Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Doanh thu',
+                    data: [12000, 19000, 3000, 5000, 2000, 3000, 4500],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+</html>
