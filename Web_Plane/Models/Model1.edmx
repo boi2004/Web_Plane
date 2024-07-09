@@ -615,16 +615,6 @@
           <NavigationProperty Name="CHANGBAYs" Relationship="Self.SANBAYCATCANH" FromRole="SANBAY" ToRole="CHANGBAY" />
           <NavigationProperty Name="CHANGBAYs1" Relationship="Self.SANBAYHACANH" FromRole="SANBAY" ToRole="CHANGBAY" />
         </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="VeMayBay">
           <Key>
             <PropertyRef Name="MaVe" />
@@ -828,7 +818,6 @@
           <EntitySet Name="MAYBAYs" EntityType="Self.MAYBAY" />
           <EntitySet Name="NHAGAs" EntityType="Self.NHAGA" />
           <EntitySet Name="SANBAYs" EntityType="Self.SANBAY" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="VeMayBays" EntityType="Self.VeMayBay" />
           <AssociationSet Name="FK__CBLV__IDCB__73BA3083" Association="Self.FK__CBLV__IDCB__73BA3083">
             <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />
