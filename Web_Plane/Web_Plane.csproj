@@ -217,7 +217,9 @@
     <Content Include="Content\css\DangNhap.css" />
     <Content Include="Content\css\Index.css" />
     <Content Include="Content\css\QuenMatKhauStyle.css" />
+    <Content Include="Content\css\Thongtincanhan.css" />
     <Content Include="Content\css\TrangChu.css" />
+    <Content Include="Content\css\Trangvemaybay.css" />
     <Content Include="Content\css\vemaybay.css" />
     <Content Include="Content\js\Headermenu.js" />
     <Content Include="Content\js\bootstrap.bundle.js" />
@@ -2211,6 +2213,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ChucNang\QuenMatKhau.cshtml" />
     <Content Include="Views\Home\TrangChu.cshtml" />
+    <Content Include="Views\Home\Trangvemaybay.cshtml" />
+    <Content Include="Views\Home\Thongtincanhan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

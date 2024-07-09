@@ -16,6 +16,14 @@ namespace Web_Plane.Controllers
         {
             return View();
         }
+        public ActionResult Trangvemaybay()
+        {
+            return View();
+        }
+        public ActionResult Thongtincanhan()
+        {
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

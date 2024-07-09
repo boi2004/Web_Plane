@@ -2,10 +2,9 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: Arial,sans-serif;
 }
-body {
-    font-family: 'Poppins', sans-serif;
-}
+
 
 .banner {
     width: 100%;
@@ -87,7 +86,7 @@ body {
         box-shadow: 1px 1px 1px 1px #b4b4b4;
     }
     .content-Goi-y-tuong .card-text
-    {
+    {   font-family:Arial;
         font-weight:bold;
 
     }
@@ -111,6 +110,7 @@ body {
             border-radius:10px;
         }
         .content-chuyen_bay_pho_bien .card .card-body p {
+            font-family:Arial;
             font-weight: bold;
         }
 
@@ -138,6 +138,7 @@ body {
             font-weight:bold;
         }
     .da_dang_khach_san .card p {
+        
         color: #F86608;
     }
 

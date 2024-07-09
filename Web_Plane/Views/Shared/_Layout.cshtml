@@ -15,16 +15,16 @@
 <body>
     <!-- Header -->
     <header>
-        <a href="#" class="logo"><span>Bayvivu</span></a>
-        <ul class="navbarr">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Vé máy bay</a></li>
-            <li><a href="#">Khách sạn</a></li>
-            <li><a href="#">Xe đưa đón</a></li>
+        <a href="https://localhost:44380/Home/TrangChu#" class="logo"><span>Bayvivu</span></a>
+        <ul class="navbarr" style="font-family: Arial;">
+            <li><a href="https://localhost:44380/Home/TrangChu">Trang chủ</a></li>
+            <li><a href="https://localhost:44380/Home/Trangvemaybay">Vé máy bay</a></li>
+            <li><a href="#">Đặt vé</a></li>
+            <li><a href="https://localhost:44380/Home/Thongtincanhan">Thông tin cá nhân khách hàng</a></li>
         </ul>
         <div class="main">
-            <a href="#" class="user"><i class='bx bxs-user'></i>Đăng nhập</a>
-            <a href="#">Đăng ký</a>
+            <a href="https://localhost:44380/ChucNang/DangNhap" class="user"><i class='bx bxs-user'></i>Đăng nhập</a>
+            <a href="https://localhost:44380/ChucNang/DangKy">Đăng ký</a>
             <div class="bx bx-menu" id="menu-icons"></div>
             <button id="switch-mode" style="outline:none; border:none; background:none; cursor:pointer;"><i class='bx bxs-moon' style="font-size:21px;"></i></button>
         </div>
@@ -84,7 +84,7 @@
 
     <!--JS link-->
     <script type="text/javascript" src="~/Content/js/Headermenu.js"></script>
-    <script>
+    <script> 
         const body = document.body;
         const switch_mode = document.querySelector('#switch-mode i');
         switch_mode.addEventListener('click', () => {
