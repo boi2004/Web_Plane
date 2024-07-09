@@ -17,8 +17,7 @@ namespace Web_Plane.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHACHHANG()
         {
-            this.VeMayBays = new HashSet<VeMayBay>();
-            this.DICHVUs = new HashSet<DICHVU>();
+            this.HOADONs = new HashSet<HOADON>();
         }
     
         public string CCCD { get; set; }
@@ -27,15 +26,12 @@ namespace Web_Plane.Models
         public string Email { get; set; }
         public string DiaChi { get; set; }
         public string LoaiKH { get; set; }
-        public System.DateTime NgaySinh { get; set; }
-        public string GioiTinh { get; set; }
+        public Nullable<System.DateTime> NgaySinh { get; set; }
+        public Nullable<bool> GioiTinh { get; set; }
         public string QuocTich { get; set; }
         public string Password { get; set; }
-        public string IMG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VeMayBay> VeMayBays { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DICHVU> DICHVUs { get; set; }
+        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

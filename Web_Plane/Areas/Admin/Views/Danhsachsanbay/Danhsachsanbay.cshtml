@@ -5,10 +5,10 @@
     Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
 }
 
-<h2>Danh sách sân bay</h2>
+<h2>Danhsachsanbay</h2>
 
 <p>
-    @Html.ActionLink("Tạo mới", "Themdanhsachsanbay")
+    @Html.ActionLink("Create New", "Themdanhsachsanbay")
 </p>
 <table class="table">
     <tr>
@@ -24,10 +24,10 @@
         <th>
             @Html.DisplayNameFor(model => model.DiaChi)
         </th>
-        
+        <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model) { 
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.TenSanBay)
@@ -42,9 +42,10 @@
             @Html.DisplayFor(modelItem => item.DiaChi)
         </td>
         <td>
-            @Html.ActionLink("Chỉnh sửa", "Chinhsuadanhsachsanbay", new { id = item.IATA }) |
-            @Html.ActionLink("Xóa", "Xoadanhsachsanbay", new { id = item.IATA })
+            @Html.ActionLink("Chỉnh sửa", "Chinhsuadanhsachsanbay", new { id = item.IATA.Trim() })
+            @Html.ActionLink("Delete", "Xoadanhsachsanbay", new { id = item.IATA.Trim()})
         </td>
     </tr>
 }
+
 </table>

@@ -13,10 +13,10 @@ namespace Web_Plane.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBMayBayEntities : DbContext
+    public partial class DBMayBay1Entities : DbContext
     {
-        public DBMayBayEntities()
-            : base("name=DBMayBayEntities")
+        public DBMayBay1Entities()
+            : base("name=DBMayBay1Entities")
         {
         }
     
@@ -25,14 +25,17 @@ namespace Web_Plane.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CBLV> CBLVs { get; set; }
         public virtual DbSet<CHANGBAY> CHANGBAYs { get; set; }
+        public virtual DbSet<CHITIETHOADON> CHITIETHOADONs { get; set; }
         public virtual DbSet<CHUYENBAY> CHUYENBAYs { get; set; }
-        public virtual DbSet<CO> COes { get; set; }
-        public virtual DbSet<DICHVU> DICHVUs { get; set; }
+        public virtual DbSet<CONG> CONGs { get; set; }
         public virtual DbSet<HANGHANGKHONG> HANGHANGKHONGs { get; set; }
+        public virtual DbSet<HOADON> HOADONs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<LOAIVE> LOAIVEs { get; set; }
         public virtual DbSet<MAYBAY> MAYBAYs { get; set; }
+        public virtual DbSet<NHAGA> NHAGAs { get; set; }
         public virtual DbSet<SANBAY> SANBAYs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<VeMayBay> VeMayBays { get; set; }

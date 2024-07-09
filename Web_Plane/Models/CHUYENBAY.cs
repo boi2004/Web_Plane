@@ -17,22 +17,22 @@ namespace Web_Plane.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CHUYENBAY()
         {
+            this.CBLVs = new HashSet<CBLV>();
             this.CHANGBAYs = new HashSet<CHANGBAY>();
-            this.COes = new HashSet<CO>();
             this.VeMayBays = new HashSet<VeMayBay>();
         }
     
         public string IDCB { get; set; }
-        public System.DateTime ThoiGianKhoiHanh { get; set; }
-        public double ThoiGianBay { get; set; }
-        public string LoaiCB { get; set; }
+        public string LoaiChuyenBay { get; set; }
         public string IDHK { get; set; }
+        public string SoCong { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CBLV> CBLVs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHANGBAY> CHANGBAYs { get; set; }
         public virtual HANGHANGKHONG HANGHANGKHONG { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CO> COes { get; set; }
+        public virtual CONG CONG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VeMayBay> VeMayBays { get; set; }
     }

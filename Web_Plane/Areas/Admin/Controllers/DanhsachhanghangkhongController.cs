@@ -6,12 +6,13 @@ using System.Web;
 using System.Web.Mvc;
 using System.Collections;
 using Web_Plane.Models;
+using Web_Plane.Models.ModelClass;
 
 namespace Web_Plane.Areas.Admin.Controllers
 {
     public class DanhsachhanghangkhongController : Controller
     {
-        private DBMayBayEntities db = new DBMayBayEntities();
+        private DBMayBay1Entities db = new DBMayBay1Entities();
 
         // GET: Admin/Danhsachhanghangkhong
          public ActionResult VeMayBay()
@@ -32,7 +33,7 @@ namespace Web_Plane.Areas.Admin.Controllers
         // POST: Admin/Themdanhsachhanghangkhong
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Themdanhsachhanghangkhong([Bind(Include = "IDHK,TenHang,IMG")] HANGHANGKHONG hanghangkhong)
+        public ActionResult Themdanhsachhanghangkhong([Bind(Include = "IDHK,TenHang,DiaChi,NamThanhLap")] HANGHANGKHONG hanghangkhong)
         {
             try
             {

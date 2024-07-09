@@ -13,7 +13,7 @@ namespace Web_Plane.Controllers.Chucnang
 
     public class ChucNangController : Controller
     {
-        DBMayBayEntities DBMayBayEntities = new DBMayBayEntities();
+        DBMayBay1Entities DBMayBayEntities = new DBMayBay1Entities();
         // GET: ChucNang
         public ActionResult DangNhap()
         {
@@ -30,7 +30,7 @@ namespace Web_Plane.Controllers.Chucnang
                 {
                     // Đăng nhập thành công với vai trò admin
                     Session["IsAdmin"] = true;
-                    return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
+                    return RedirectToAction("Danhsachhoadon", "HomeAdmin", new { area = "Admin" });
                     // return RedirectToAction("TrangChu", "Home");
                 }
 

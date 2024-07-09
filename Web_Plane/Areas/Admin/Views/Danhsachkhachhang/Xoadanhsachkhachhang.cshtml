@@ -13,12 +13,6 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CCCD)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CCCD)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.HoTen)
         </dt>
 
@@ -90,23 +84,14 @@
             @Html.DisplayFor(model => model.Password)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IMG)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IMG)
-        </dd>
-
     </dl>
 
-    @using (Html.BeginForm("Xoadanhsachkhachhang", "Danhsachkhachhang", FormMethod.Post))
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
+
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Danhsachkhachhang")
+            @Html.ActionLink("Back to List", "Index")
         </div>
-    
     }
 </div>

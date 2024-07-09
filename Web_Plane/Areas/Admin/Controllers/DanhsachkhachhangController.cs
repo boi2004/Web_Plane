@@ -6,12 +6,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Web_Plane.Models;
+using Web_Plane.Models.ModelClass;
 
 namespace Web_Plane.Areas.Admin.Controllers
 {
     public class DanhsachkhachhangController : Controller
     {
-        private DBMayBayEntities db = new DBMayBayEntities();
+        private DBMayBay1Entities db = new DBMayBay1Entities();
         // GET: Admin/Danhsachkhachhang
         public ActionResult Danhsachkhachhang()
         {
@@ -56,7 +57,7 @@ namespace Web_Plane.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Themdanhsachkhachhang([Bind(Include = "CCCD,HoTen,Sdt,Email,DiaChi,LoaiKH,NgaySinh,GioiTinh,QuocTich,Password,IMG")] KHACHHANG kHACHHANG)
+        public ActionResult Themdanhsachkhachhang([Bind(Include = "CCCD,HoTen,Sdt,Email,DiaChi,LoaiKH,NgaySinh,GioiTinh,QuocTich,Password")] KHACHHANG kHACHHANG)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +83,7 @@ namespace Web_Plane.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Chinhsuadanhsachkhachhang([Bind(Include = "CCCD,HoTen,Sdt,Email,DiaChi,LoaiKH,NgaySinh,GioiTinh,QuocTich,Password,IMG")] KHACHHANG kHACHHANG)
+        public ActionResult Chinhsuadanhsachkhachhang([Bind(Include = "CCCD,HoTen,Sdt,Email,DiaChi,LoaiKH,NgaySinh,GioiTinh,QuocTich,Password")] KHACHHANG kHACHHANG)
         {
             if (ModelState.IsValid)
             {

@@ -121,7 +121,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DanhsachchuyenbayController.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhsachhanghangkhongController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DanhsachhoadonController.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhsachkhachhangController.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhsachsanbayController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
@@ -130,19 +132,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CBLV.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CHANGBAY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHITIETHOADON.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CHUYENBAY.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DICHVU.cs">
+    <Compile Include="Models\CONG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HANGHANGKHONG.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HOADON.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHACHHANG.cs">
@@ -172,6 +180,9 @@
     <Compile Include="Models\ModelClass\DangKyViewModel.cs" />
     <Compile Include="Models\ModelClass\dangnhap.cs" />
     <Compile Include="Models\ModelClass\User.cs" />
+    <Compile Include="Models\NHAGA.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SANBAY.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -2170,16 +2181,8 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Danhsachsanbay\Danhsachsanbay.cshtml" />
-    <Content Include="Areas\Admin\Views\Danhsachsanbay\Themdanhsachsanbay.cshtml" />
-    <Content Include="Areas\Admin\Views\Danhsachsanbay\Xoadanhsachsanbay.cshtml" />
-    <Content Include="Areas\Admin\Views\Danhsachsanbay\Chinhsuadanhsachsanbay.cshtml" />
-    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Danhsachhanghangkhong.cshtml" />
-    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Themdanhsachhanghangkhong.cshtml" />
-    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Xoadanhsachhanghangkhong.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\VeMayBay.cshtml" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -2187,11 +2190,19 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Chinhsuadanhsachhanghangkhong.cshtml" />
     <Content Include="Areas\Admin\Views\Danhsachkhachhang\Danhsachkhachhang.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachkhachhang\Xoadanhsachkhachhang.cshtml" />
     <Content Include="Areas\Admin\Views\Danhsachkhachhang\Themdanhsachkhachhang.cshtml" />
     <Content Include="Areas\Admin\Views\Danhsachkhachhang\Chinhsuadanhsachkhachhang.cshtml" />
-    <Content Include="Areas\Admin\Views\Danhsachkhachhang\Xoadanhsachkhachhang.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Danhsachhanghangkhong.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Themdanhsachhanghangkhong.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Chinhsuadanhsachhanghangkhong.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachhanghangkhong\Xoadanhsachhanghangkhong.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachsanbay\Danhsachsanbay.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachsanbay\Themdanhsachsanbay.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachsanbay\Chinhsuadanhsachsanbay.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachsanbay\Xoadanhsachsanbay.cshtml" />
+    <Content Include="Areas\Admin\Views\Danhsachhoadon\Danhsachhoadon.cshtml" />
     <None Include="Scripts\jquery-3.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />

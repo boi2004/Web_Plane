@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Web_Plane.Models;
 
 namespace Web_Plane.Areas.Admin.Controllers
 {
-    public class HomeAdminController : Controller
+    public class DanhsachchuyenbayController : Controller
     {
-        private DBMayBay1Entities DBMayBayEntities = new DBMayBay1Entities();
-
-        // GET: Admin/HomeAdmin
+        // GET: Admin/Danhsachchuyenbay
         public ActionResult Index()
         {
             return View();
         }
-       
     }
 }

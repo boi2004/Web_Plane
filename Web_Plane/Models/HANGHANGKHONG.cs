@@ -23,7 +23,8 @@ namespace Web_Plane.Models
     
         public string IDHK { get; set; }
         public string TenHang { get; set; }
-        public string IMG { get; set; }
+        public string DiaChi { get; set; }
+        public Nullable<System.DateTime> NamThanhLap { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHUYENBAY> CHUYENBAYs { get; set; }

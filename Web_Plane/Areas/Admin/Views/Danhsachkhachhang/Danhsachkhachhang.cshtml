@@ -1,60 +1,81 @@
 ﻿@model IEnumerable<Web_Plane.Models.KHACHHANG>
 
 @{
-    ViewBag.Title = "Danh sách khách hàng";
+    ViewBag.Title = "Danhsachkhachhang";
     Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
 }
 
-<h2 class="text-center">Danh sách khách hàng</h2>
+<h2>Danhsachkhachhang</h2>
 
-<div class="text-right mb-3">
-    @Html.ActionLink("Tạo mới", "Themdanhsachkhachhang", null, new { @class = "btn btn-primary" })
-</div>
+<p>
+    @Html.ActionLink("Create New", "Themdanhsachkhachhang")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sdt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GioiTinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuocTich)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
 
-<div class="table-responsive">
-    <table class="table table-bordered table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th>STT</th>
-                <th>@Html.DisplayNameFor(model => model.CCCD)</th>
-                <th>@Html.DisplayNameFor(model => model.HoTen)</th>
-                <th>@Html.DisplayNameFor(model => model.Sdt)</th>
-                <th>@Html.DisplayNameFor(model => model.Email)</th>
-                <th>@Html.DisplayNameFor(model => model.DiaChi)</th>
-                <th>@Html.DisplayNameFor(model => model.LoaiKH)</th>
-                <th>@Html.DisplayNameFor(model => model.NgaySinh)</th>
-                <th>@Html.DisplayNameFor(model => model.GioiTinh)</th>
-                <th>@Html.DisplayNameFor(model => model.QuocTich)</th>
-                <th>@Html.DisplayNameFor(model => model.Password)</th>
-                <th>@Html.DisplayNameFor(model => model.IMG)</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (var i = 0; i < Model.Count(); i++)
-            {
-                var item = Model.ElementAt(i);
-                <tr>
-                    <td>@(i + 1)</td>
-                    <td>@Html.DisplayFor(modelItem => item.CCCD)</td>
-                    <td>@Html.DisplayFor(modelItem => item.HoTen)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Sdt)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
-                    <td>@Html.DisplayFor(modelItem => item.DiaChi)</td>
-                    <td>@Html.DisplayFor(modelItem => item.LoaiKH)</td>
-                    <td>@Html.DisplayFor(modelItem => item.NgaySinh)</td>
-                    <td>@Html.DisplayFor(modelItem => item.GioiTinh)</td>
-                    <td>@Html.DisplayFor(modelItem => item.QuocTich)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Password)</td>
-                    <td>
-                        <img src="@Url.Content(item.IMG)" alt="Customer Image" class="img-thumbnail" style="max-width: 50px;" />
-                    </td>
-                    <td>
-                        @Html.ActionLink("Sửa", "Chinhsuadanhsachkhachhang", new { id = item.CCCD }, new { @class = "btn btn-warning btn-sm" }) |
-                        @Html.ActionLink("Xóa", "Xoadanhsachkhachhang", new { id = item.CCCD }, new { @class = "btn btn-danger btn-sm" })
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sdt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GioiTinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuocTich)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Chinhsuadanhsachkhachhang", new { id=item.CCCD }) |
+            @Html.ActionLink("Delete", "Xoadanhsachkhachhang", new { id=item.CCCD })
+        </td>
+    </tr>
+}
+
+</table>

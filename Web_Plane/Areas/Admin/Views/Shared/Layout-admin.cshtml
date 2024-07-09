@@ -65,7 +65,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Hiển thị:</h6>
-                        @Html.ActionLink("Thông tin khách hàng", "Danhsachkhachhang","Danhsachkhachhang", new { area = "Admin" }, new { @class = "collapse-item" })
+                        @Html.ActionLink("Thông tin khách hàng", "Danhsachkhachhang", "Danhsachkhachhang", new { area = "Admin" }, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách hóa đơn", "Danhsachhoadon", "Danhsachhoadon", new { area = "Admin" }, new { @class = "collapse-item" })
+                        <a class="collapse-item" href="#">Danh sách vé</a>
                     </div>
                 </div>
             </li>
@@ -83,8 +85,10 @@
                         <h6 class="collapse-header">Hiển thị:</h6>
                         @Html.ActionLink("Hãng hàng không", "Danhsachhanghangkhong", "Danhsachhanghangkhong", new { area = "Admin" }, new { @class = "collapse-item" })
                         @Html.ActionLink("Sân bay", "Danhsachsanbay", "Danhsachsanbay", new { area = "Admin" }, new { @class = "collapse-item" })
-                        <a class="collapse-item" href="#l">Loại vé</a>
-                        <a class="collapse-item" href="#">Chuyến bay</a>
+                        <a class="collapse-item" href="#l">Loại Vé</a>
+                        <a class="collapse-item" href="#">Chuyến Bay</a>
+                        <a class="collapse-item" href="#">Máy Bay</a>
+                        <a class="collapse-item" href="#">Nhà Ga</a>
                     </div>
                 </div>
             </li>
@@ -106,7 +110,7 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">DỊCH VỤ:</h6>
+                        <h6 class="collapse-header">DỊCH VỤ SÂN BAY:</h6>
                         <a class="collapse-item" href="#">Khách sạn</a>
                         <a class="collapse-item" href="#">Xe</a>
                         <a class="collapse-item" href="#">Khác</a>

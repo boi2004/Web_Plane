@@ -12,9 +12,9 @@ namespace Web_Plane.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CO
+    public partial class CBLV
     {
-        public int SoLuong { get; set; }
+        public Nullable<int> SoLuong { get; set; }
         public string IDCB { get; set; }
         public string MaLoaiVe { get; set; }
     
