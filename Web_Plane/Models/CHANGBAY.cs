@@ -21,7 +21,10 @@ namespace Web_Plane.Models
             this.SANBAYs1 = new HashSet<SANBAY>();
         }
     
+        public Nullable<System.DateTime> ThoiGianKhoiHanh { get; set; }
+        public Nullable<System.DateTime> ThoiGianBay { get; set; }
         public string MaChangBay { get; set; }
+        public string LoaiChangBay { get; set; }
         public string IDCB { get; set; }
         public string Sohieu { get; set; }
     

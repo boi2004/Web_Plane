@@ -12,21 +12,25 @@ namespace Web_Plane.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DICHVU
+    public partial class HOADON
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DICHVU()
+        public HOADON()
         {
-            this.KHACHHANGs = new HashSet<KHACHHANG>();
+            this.CHITIETHOADONs = new HashSet<CHITIETHOADON>();
         }
     
-        public string MaDV { get; set; }
-        public string TenDV { get; set; }
+        public string MaHoaDon { get; set; }
+        public Nullable<System.DateTime> NgayThanhToan { get; set; }
         public string TrangThai { get; set; }
-        public int GiaTien { get; set; }
-        public System.DateTime Ngay { get; set; }
+        public string PhuongThuc { get; set; }
+        public string Ghichu { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public Nullable<decimal> TongTien { get; set; }
+        public string CCCD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHACHHANG> KHACHHANGs { get; set; }
+        public virtual ICollection<CHITIETHOADON> CHITIETHOADONs { get; set; }
+        public virtual KHACHHANG KHACHHANG { get; set; }
     }
 }

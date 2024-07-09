@@ -12,13 +12,13 @@ namespace Web_Plane.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CO
+    public partial class CHITIETHOADON
     {
-        public int SoLuong { get; set; }
-        public string IDCB { get; set; }
-        public string MaLoaiVe { get; set; }
+        public string MACTHD { get; set; }
+        public string MaHoaDon { get; set; }
+        public string MaVe { get; set; }
     
-        public virtual CHUYENBAY CHUYENBAY { get; set; }
-        public virtual LOAIVE LOAIVE { get; set; }
+        public virtual HOADON HOADON { get; set; }
+        public virtual VeMayBay VeMayBay { get; set; }
     }
 }

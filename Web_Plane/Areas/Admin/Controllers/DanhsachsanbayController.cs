@@ -3,12 +3,13 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Web_Plane.Models;
+using Web_Plane.Models.ModelClass;
 
 namespace Web_Plane.Areas.Admin.Controllers
 {
     public class DanhsachsanbayController : Controller
     {
-        private DBMayBayEntities db = new DBMayBayEntities();
+        private DBMayBay1Entities db = new DBMayBay1Entities();
 
         // GET: Admin/Danhsachsanbay
         public ActionResult Danhsachsanbay()
@@ -44,40 +45,33 @@ namespace Web_Plane.Areas.Admin.Controllers
             return View(sanbay); // Nếu model không hợp lệ hoặc có lỗi, trả về view cùng với model để hiển thị lỗi
         }
 
+
         // GET: Admin/Danhsachsanbay/Chinhsuadanhsachsanbay/{id}
         public ActionResult Chinhsuadanhsachsanbay(string id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest); // Nếu không có id, trả về lỗi BadRequest
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SANBAY sanbay = db.SANBAYs.Find(id); // Tìm sân bay theo id
+            SANBAY sanbay = db.SANBAYs.Find(id);
             if (sanbay == null)
             {
-                return HttpNotFound(); // Nếu không tìm thấy sân bay, trả về lỗi NotFound
+                return HttpNotFound();
             }
-            return View(sanbay); // Trả về view chỉnh sửa sân bay
+            return View(sanbay);
         }
-
-        // POST: Admin/Danhsachsanbay/Chinhsuadanhsachsanbay
+        // POST: Admin/Danhsachsanbay/Chinhsuadanhsachsanbay/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Chinhsuadanhsachsanbay([Bind(Include = "IATA,TenSanBay,QuocGia,ThanhPho,DiaChi")] SANBAY sanbay)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid) // Kiểm tra tính hợp lệ của model
-                {
-                    db.Entry(sanbay).State = System.Data.Entity.EntityState.Modified; // Đánh dấu sân bay đã chỉnh sửa
-                    db.SaveChanges(); // Lưu thay đổi vào cơ sở dữ liệu
-                    return RedirectToAction("Danhsachsanbay"); // Chuyển hướng đến trang danh sách sân bay
-                }
+                db.Entry(sanbay).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Danhsachsanbay");
             }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", "Lỗi: " + ex.Message); // Thêm lỗi vào ModelState để hiển thị lên view
-            }
-            return View(sanbay); // Nếu model không hợp lệ hoặc có lỗi, trả về view cùng với model để hiển thị lỗi
+            return View(sanbay);
         }
 
         // GET: Admin/Danhsachsanbay/Xoadanhsachsanbay/{id}
@@ -85,42 +79,38 @@ namespace Web_Plane.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest); // Nếu không có id, trả về lỗi BadRequest
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SANBAY sanbay = db.SANBAYs.Find(id); // Tìm sân bay theo id
+            SANBAY sanbay = db.SANBAYs.Find(id);
             if (sanbay == null)
             {
-                return HttpNotFound(); // Nếu không tìm thấy sân bay, trả về lỗi NotFound
+                return HttpNotFound();
             }
-            return View(sanbay); // Trả về view xác nhận xóa sân bay
+            return View(sanbay);
         }
 
-        // POST: Admin/Danhsachsanbay/Xoadanhsachsanbay/{id}
+        /// POST: Admin/Danhsachsanbay/Xoadanhsachsanbay/{id}
         [HttpPost, ActionName("Xoadanhsachsanbay")]
         [ValidateAntiForgeryToken]
-        public ActionResult XacNhanXoadanhsachsanbay(string id)
+        public ActionResult Xacnhanxoadanhsachsanbay(string id)
         {
             try
             {
-                SANBAY sanbay = db.SANBAYs.Find(id); // Tìm sân bay theo id
-                db.SANBAYs.Remove(sanbay); // Xóa sân bay khỏi cơ sở dữ liệu
-                db.SaveChanges(); // Lưu thay đổi vào cơ sở dữ liệu
-                return RedirectToAction("Danhsachsanbay"); // Chuyển hướng đến trang danh sách sân bay
+                SANBAY sanbay = db.SANBAYs.Find(id);
+                if (sanbay != null)
+                {
+                    db.SANBAYs.Remove(sanbay);
+                    db.SaveChanges();
+                }
+                return RedirectToAction("Danhsachsanbay");
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "Lỗi: " + ex.Message); // Thêm lỗi vào ModelState để hiển thị lên view
-                return View(db.SANBAYs.Find(id)); // Trả về lại view xóa sân bay với model tương ứng
+                ModelState.AddModelError("", "Lỗi: " + ex.Message);
+                return View();
             }
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+
     }
 }

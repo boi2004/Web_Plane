@@ -28,6 +28,10 @@
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
+                @Html.TextBoxFor(m => m.Sdt, new { @placeholder = "Nhập Số điện thoại của bạn", @required = "required", @autocomplete = "sdt" })
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
                 @Html.TextBoxFor(m => m.Email, new { @placeholder = "Nhập Email của bạn", @type = "email", @required = "required", @autocomplete = "email" })
                 <i class='bx bxs-envelope'></i>
             </div>
@@ -36,13 +40,24 @@
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="input-box">
-                @Html.TextBoxFor(m => m.NgaySinh, new { @placeholder = "Nhập ngày sinh", @type = "month", @required = "required", @autocomplete = "bday" })
+                @Html.PasswordFor(m => m.ConfirmPass, new { @placeholder = "Nhập lại mật khẩu", @required = "required", @autocomplete = "confirm-password" })
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                @Html.TextBoxFor(m => m.NgaySinh, new { @placeholder = "Nhập ngày sinh", @type = "date", @required = "required", @autocomplete = "bday", @style = "padding-right: 19px" })
             </div>
             <div class="input-box">
                 @Html.TextBoxFor(m => m.DiaChi, new { @placeholder = "Nhập địa chỉ", @required = "required", @autocomplete = "address-line1" })
                 <i class='bx bx-map'></i>
             </div>
-
+            <div class="input-box">
+                @Html.TextBoxFor(m => m.QuocTich, new { @placeholder = "Nhập quốc tịch", @required = "required", @autocomplete = "address-line1" })
+                <i class='bx bx-map'></i>
+            </div>
+            <div class="input-box" style="display: flex; justify-content: center">
+                @Html.RadioButtonFor(m => m.GioiTinh, "0", new { @style = "width: 15px; height: 15px; vertical-align: middle; margin: 0 5px 0 0;" }) Nam
+                @Html.RadioButtonFor(m => m.GioiTinh, "1", new { @style = "width: 15px; height: 15px; vertical-align: middle; margin: 0 5px 0 5px;" }) Nữ
+            </div>
             <div class="Dong_y_dieu_khoan">
                 <label><input type="checkbox" id="terms" required />I agree all statements in <a href="#">Terms of service</a></label>
             </div>

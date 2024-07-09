@@ -1,36 +1,39 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
+using System.Collections;
 using Web_Plane.Models;
+using Web_Plane.Models.ModelClass;
 
 namespace Web_Plane.Areas.Admin.Controllers
 {
     public class DanhsachhanghangkhongController : Controller
     {
-        private DBMayBayEntities db = new DBMayBayEntities();
+        private DBMayBay1Entities db = new DBMayBay1Entities();
 
         // GET: Admin/Danhsachhanghangkhong
+         public ActionResult VeMayBay()
+        {
+            return View(); // Trả về view hiển thị form thêm hãng hàng không mới
+        }
         public ActionResult Danhsachhanghangkhong()
         {
             var danhsachhanghangkhong = db.HANGHANGKHONGs.ToList(); // Lấy danh sách hãng hàng không từ cơ sở dữ liệu
             return View(danhsachhanghangkhong); // Truyền danh sách hãng hàng không đến view
         }
-
-        // GET: Admin/Danhsachhanghangkhong/Themdanhsachhanghangkhong
+       
         public ActionResult Themdanhsachhanghangkhong()
         {
             return View(); // Trả về view hiển thị form thêm hãng hàng không mới
         }
-        public ActionResult VeMayBay()
-        {
-            return View(); // Trả về view hiển thị form thêm hãng hàng không mới
-        }
 
-        // POST: Admin/Danhsachhanghangkhong/Themdanhsachhanghangkhong
+        // POST: Admin/Themdanhsachhanghangkhong
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Themdanhsachhanghangkhong([Bind(Include = "IDHK,TenHang,IMG")] HANGHANGKHONG hanghangkhong)
+        public ActionResult Themdanhsachhanghangkhong([Bind(Include = "IDHK,TenHang,DiaChi,NamThanhLap")] HANGHANGKHONG hanghangkhong)
         {
             try
             {
@@ -46,22 +49,37 @@ namespace Web_Plane.Areas.Admin.Controllers
                 ModelState.AddModelError("", "Lỗi: " + ex.Message); // Thêm lỗi vào ModelState để hiển thị lên view
             }
             return View(hanghangkhong); // Nếu model không hợp lệ hoặc có lỗi, trả về view cùng với model để hiển thị lỗi
+
+
         }
 
         // GET: Admin/Danhsachhanghangkhong/Chinhsuadanhsachhanghangkhong/{id}
         public ActionResult Chinhsuadanhsachhanghangkhong(string id)
         {
-            if (id == null)
+            // Tìm hãng hàng không theo id
+            HANGHANGKHONG hanghangkhong = db.HANGHANGKHONGs.SingleOrDefault(h => h.IDHK == id);
+
+          
+
+            // Kiểm tra nếu id là null hoặc rỗng
+            if (string.IsNullOrEmpty(id))
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest); // Nếu không có id, trả về lỗi BadRequest
+                // Trả về mã lỗi BadRequest nếu id không hợp lệ
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HANGHANGKHONG hanghangkhong = db.HANGHANGKHONGs.Find(id); // Tìm hãng hàng không theo id
+
+            // Nếu không tìm thấy hãng hàng không, trả về lỗi NotFound
             if (hanghangkhong == null)
             {
-                return HttpNotFound(); // Nếu không tìm thấy hãng hàng không, trả về lỗi NotFound
+                // Trả về mã lỗi NotFound nếu không tìm thấy hãng hàng không
+                return HttpNotFound();
             }
-            return View(hanghangkhong); // Trả về view chỉnh sửa hãng hàng không
+
+            // Trả về view chỉnh sửa hãng hàng không với dữ liệu hãng hàng không tìm thấy
+            return View(hanghangkhong);
         }
+
+
 
         // POST: Admin/Danhsachhanghangkhong/Chinhsuadanhsachhanghangkhong
         [HttpPost]
@@ -83,6 +101,10 @@ namespace Web_Plane.Areas.Admin.Controllers
             }
             return View(hanghangkhong); // Nếu model không hợp lệ hoặc có lỗi, trả về view cùng với model để hiển thị lỗi
         }
+
+
+
+
 
         // GET: Admin/Danhsachhanghangkhong/Xoadanhsachhanghangkhong/{id}
         public ActionResult Xoadanhsachhanghangkhong(string id)

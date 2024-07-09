@@ -12,24 +12,21 @@ namespace Web_Plane.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class VeMayBay
+    public partial class NHAGA
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public VeMayBay()
+        public NHAGA()
         {
-            this.CHITIETHOADONs = new HashSet<CHITIETHOADON>();
+            this.CONGs = new HashSet<CONG>();
         }
     
-        public string MaVe { get; set; }
-        public string ChoNgoi { get; set; }
-        public string LoaiHanhLy { get; set; }
-        public Nullable<decimal> ThanhTien { get; set; }
-        public string IDCB { get; set; }
-        public string MaLoaiVe { get; set; }
+        public string TenNhaGa { get; set; }
+        public string TrangThai { get; set; }
+        public string LoaiNhaGa { get; set; }
+        public string IATA { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETHOADON> CHITIETHOADONs { get; set; }
-        public virtual CHUYENBAY CHUYENBAY { get; set; }
-        public virtual LOAIVE LOAIVE { get; set; }
+        public virtual ICollection<CONG> CONGs { get; set; }
+        public virtual SANBAY SANBAY { get; set; }
     }
 }

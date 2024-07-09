@@ -17,16 +17,16 @@ namespace Web_Plane.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LOAIVE()
         {
-            this.COes = new HashSet<CO>();
+            this.CBLVs = new HashSet<CBLV>();
             this.VeMayBays = new HashSet<VeMayBay>();
         }
     
         public string MaLoaiVe { get; set; }
-        public int GiaVe { get; set; }
+        public Nullable<decimal> GiaVe { get; set; }
         public string TenLoaiVe { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CO> COes { get; set; }
+        public virtual ICollection<CBLV> CBLVs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VeMayBay> VeMayBays { get; set; }
     }

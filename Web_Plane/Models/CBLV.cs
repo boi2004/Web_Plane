@@ -12,12 +12,13 @@ namespace Web_Plane.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class CBLV
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public string IDCB { get; set; }
+        public string MaLoaiVe { get; set; }
+    
+        public virtual CHUYENBAY CHUYENBAY { get; set; }
+        public virtual LOAIVE LOAIVE { get; set; }
     }
 }

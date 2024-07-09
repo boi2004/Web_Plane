@@ -17,6 +17,7 @@ namespace Web_Plane.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SANBAY()
         {
+            this.NHAGAs = new HashSet<NHAGA>();
             this.CHANGBAYs = new HashSet<CHANGBAY>();
             this.CHANGBAYs1 = new HashSet<CHANGBAY>();
         }
@@ -27,6 +28,8 @@ namespace Web_Plane.Models
         public string ThanhPho { get; set; }
         public string DiaChi { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NHAGA> NHAGAs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHANGBAY> CHANGBAYs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Web_Plane.Models.HOADON>
+
+@{
+    ViewBag.Title = "Danh sách hóa đơn";
+    Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
+}
+
+<h2>Danh sách hóa đơn</h2>
+
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Họ tên khách hàng</th>
+            <th>Số CCCD</th>
+            <th>Ngày thanh toán</th>
+            <th>Trạng thái</th>
+            <th>Phương thức thanh toán</th>
+            <th>Ghi chú</th>
+            <th>Số lượng</th>
+            <th>Tổng tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Select((data, index) => new { data, index }))
+        {
+            <tr>
+                <td>@(item.index + 1)</td>
+                <td>@Html.DisplayFor(modelItem => item.data.KHACHHANG.HoTen)</td>
+                <td>@Html.DisplayFor(modelItem => item.data.KHACHHANG.CCCD)</td>
+                <td>@Html.DisplayFor(modelItem => item.data.NgayThanhToan)</td>
+                <td>@Html.DisplayFor(modelItem => item.data.TrangThai)</td>
+                <td>@Html.DisplayFor(modelItem => item.data.PhuongThuc)</td>
+                <td>@Html.DisplayFor(modelItem => item.data.Ghichu)</td>
+                <td>@Html.DisplayFor(modelItem => item.data.SoLuong)</td>
+                <td>@string.Format("{0:#,##0} VNĐ", item.data.TongTien)</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
