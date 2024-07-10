@@ -11,8 +11,7 @@ namespace Web_Plane.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class KHACHHANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,43 +19,17 @@ namespace Web_Plane.Models
         {
             this.HOADONs = new HashSet<HOADON>();
         }
-
-        [Display(Name = "C?n c??c công dân")]
-        [Required(ErrorMessage = "C?n c??c công dân không ???c ?? tr?ng")]
+    
         public string CCCD { get; set; }
-        [Display(Name = "H? tên")]
-        [Required(ErrorMessage = "H? tên không ???c ?? tr?ng")]
         public string HoTen { get; set; }
-        [Display(Name = "S? ?i?n tho?i")]
-        [Required(ErrorMessage = "S? ?i?n tho?i không ???c ?? tr?ng")]
         public string Sdt { get; set; }
-        [Display(Name = "Email")]
-        [Required(ErrorMessage = "Email không ???c ?? tr?ng")]
-        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [Display(Name = "??a ch?")]
-        [Required(ErrorMessage = "??a ch? không ???c ?? tr?ng")]
         public string DiaChi { get; set; }
         public string LoaiKH { get; set; }
-        [Display(Name = "Ngày sinh")]
-        [Required(ErrorMessage = "Ngày sinh không ???c ?? tr?ng")]
-        public System.DateTime NgaySinh { get; set; }
-        [Display(Name = "Gi?i tính")]
-        [Required(ErrorMessage = "Gi?i tính không ???c ?? tr?ng")]
-        public string GioiTinh { get; set; }
-        [Display(Name = "Qu?c t?ch")]
-        [Required(ErrorMessage = "Qu?c t?ch không ???c ?? tr?ng")]
+        public Nullable<System.DateTime> NgaySinh { get; set; }
+        public Nullable<bool> GioiTinh { get; set; }
         public string QuocTich { get; set; }
-        [Display(Name = "M?t kh?u")]
-        [Required(ErrorMessage = "M?t kh?u không ???c ?? tr?ng")]
-        [DataType(DataType.Password)]
         public string Password { get; set; }
-        [Display(Name = "Nh?p l?i m?t kh?u")]
-        [Required(ErrorMessage = "M?t kh?u không ???c ?? tr?ng")]
-        [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "M?t kh?u không trùng kh?p")]
-        public string ConfirmPass { get; set; }
-        public string IMG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }

@@ -85,7 +85,6 @@ namespace Web_Plane.Controllers.Chucnang
                 else
                 {
                     DBMayBayEntities.Configuration.ValidateOnSaveEnabled = false;
-                    khachhang.IMG = "default";
                     khachhang.LoaiKH = "Thành viên";
                     khachhang.Password = HashPassword(khachhang.Password);
                     DBMayBayEntities.KHACHHANGs.Add(khachhang);

@@ -37,6 +37,7 @@ namespace Web_Plane.Models
         public virtual DbSet<MAYBAY> MAYBAYs { get; set; }
         public virtual DbSet<NHAGA> NHAGAs { get; set; }
         public virtual DbSet<SANBAY> SANBAYs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<VeMayBay> VeMayBays { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DBMayBay1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DBMayBay1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CBLV">
           <Key>
             <PropertyRef Name="IDCB" />
@@ -465,7 +465,8 @@
             <End Role="VeMayBay" EntitySet="VeMayBay" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBMayBay1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -614,6 +615,16 @@
           <NavigationProperty Name="NHAGAs" Relationship="Self.FK__NHAGA__IATA__5441852A" FromRole="SANBAY" ToRole="NHAGA" />
           <NavigationProperty Name="CHANGBAYs" Relationship="Self.SANBAYCATCANH" FromRole="SANBAY" ToRole="CHANGBAY" />
           <NavigationProperty Name="CHANGBAYs1" Relationship="Self.SANBAYHACANH" FromRole="SANBAY" ToRole="CHANGBAY" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="VeMayBay">
           <Key>
@@ -818,6 +829,7 @@
           <EntitySet Name="MAYBAYs" EntityType="Self.MAYBAY" />
           <EntitySet Name="NHAGAs" EntityType="Self.NHAGA" />
           <EntitySet Name="SANBAYs" EntityType="Self.SANBAY" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="VeMayBays" EntityType="Self.VeMayBay" />
           <AssociationSet Name="FK__CBLV__IDCB__73BA3083" Association="Self.FK__CBLV__IDCB__73BA3083">
             <End Role="CHUYENBAY" EntitySet="CHUYENBAYs" />

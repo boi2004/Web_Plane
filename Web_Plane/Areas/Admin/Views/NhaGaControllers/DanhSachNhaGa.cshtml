@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Web_Plane.Models.NHAGA>
+
+@{
+    ViewBag.Title = "DanhSachNhaGa";
+    Layout = "~/Areas/Admin/Views/Shared/Layout-admin.cshtml";
+}
+
+<h2>DanhSachNhaGa</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiNhaGa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SANBAY.TenSanBay)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiNhaGa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SANBAY.TenSanBay)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TenNhaGa }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TenNhaGa })
+        </td>
+    </tr>
+}
+
+</table>
