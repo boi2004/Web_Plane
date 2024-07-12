@@ -55,8 +55,8 @@
                 <i class='bx bx-map'></i>
             </div>
             <div class="input-box" style="display: flex; justify-content: center">
-                @Html.RadioButtonFor(m => m.GioiTinh, "0", new { @style = "width: 15px; height: 15px; vertical-align: middle; margin: 0 5px 0 0;" }) Nam
-                @Html.RadioButtonFor(m => m.GioiTinh, "1", new { @style = "width: 15px; height: 15px; vertical-align: middle; margin: 0 5px 0 5px;" }) Nữ
+                @Html.RadioButtonFor(m => m.GioiTinh, true, new { @style = "width: 15px; height: 15px; vertical-align: middle; margin: 0 5px 0 0;" }) Nam
+                @Html.RadioButtonFor(m => m.GioiTinh, false, new { @style = "width: 15px; height: 15px; vertical-align: middle; margin: 0 5px 0 5px;" }) Nữ
             </div>
             <div class="Dong_y_dieu_khoan">
                 <label><input type="checkbox" id="terms" required />I agree all statements in <a href="#">Terms of service</a></label>

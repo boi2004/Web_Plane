@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Web_Plane.Models.CHUYENBAY>
+
+@{
+    ViewBag.Title = "ThongTinChuyenBay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ThongTinChuyenBay</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiChuyenBay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDHK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoCong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiChuyenBay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDHK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoCong)
+        </td>
+        <td>
+            @Html.ActionLink("Xem chi tiết", "CacVe", new { idcb = item.IDCB }) 
+        </td>
+    </tr>
+}
+
+</table>

@@ -9,7 +9,7 @@ namespace Web_Plane.Areas.Admin.Controllers
 {
     public class HomeAdminController : Controller
     {
-        private DBMayBay1Entities DBMayBayEntities = new DBMayBay1Entities();
+        private DBMayBayEntities DBMayBayEntities = new DBMayBayEntities();
 
         // GET: Admin/HomeAdmin
         public ActionResult Index()

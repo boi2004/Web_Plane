@@ -13,10 +13,10 @@ namespace Web_Plane.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBMayBay1Entities : DbContext
+    public partial class DBMayBayEntities : DbContext
     {
-        public DBMayBay1Entities()
-            : base("name=DBMayBay1Entities")
+        public DBMayBayEntities()
+            : base("name=DBMayBayEntities")
         {
         }
     
@@ -37,7 +37,6 @@ namespace Web_Plane.Models
         public virtual DbSet<MAYBAY> MAYBAYs { get; set; }
         public virtual DbSet<NHAGA> NHAGAs { get; set; }
         public virtual DbSet<SANBAY> SANBAYs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<VeMayBay> VeMayBays { get; set; }
     }
 }

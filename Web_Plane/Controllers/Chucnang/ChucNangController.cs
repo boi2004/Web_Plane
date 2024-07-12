@@ -13,7 +13,7 @@ namespace Web_Plane.Controllers.Chucnang
 
     public class ChucNangController : Controller
     {
-        DBMayBay1Entities DBMayBayEntities = new DBMayBay1Entities();
+        DBMayBayEntities DBMayBayEntities = new DBMayBayEntities();
         // GET: ChucNang
         [HttpGet]
         public ActionResult DangNhap()
@@ -114,6 +114,20 @@ namespace Web_Plane.Controllers.Chucnang
         //    //}
         //    return View();
         //}
+        public ActionResult ThongTinChuyenBay()
+        {
+            var cb = DBMayBayEntities.CHUYENBAYs.ToList();
+            return View(cb);
+        }
+        public ActionResult CacVe(string idcb)
+        {
+            List<VeMayBay> Dsachve = DBMayBayEntities.VeMayBays.Where(v => v.IDCB == idcb).ToList();
+            if (Dsachve.Count > 0)
+                ViewBag.DanhSachVeTitle = "Danh sách vé";
+            else
+                ViewBag.DanhSachVeTitle = "Danh sách vé";
+            return View(Dsachve);
+        }
         private string HashPassword(string password)
         {
             // Mã hóa mật khẩu bằng SHA256
@@ -136,5 +150,7 @@ namespace Web_Plane.Controllers.Chucnang
             // So sánh hash của mật khẩu đã nhập với hash đã lưu trữ
             return enteredPasswordHash == storedHash;
         }
+
+
     }
 }

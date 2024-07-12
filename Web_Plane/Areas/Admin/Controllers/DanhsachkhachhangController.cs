@@ -12,7 +12,7 @@ namespace Web_Plane.Areas.Admin.Controllers
 {
     public class DanhsachkhachhangController : Controller
     {
-        private DBMayBay1Entities db = new DBMayBay1Entities();
+        private DBMayBayEntities db = new DBMayBayEntities();
         // GET: Admin/Danhsachkhachhang
         public ActionResult Danhsachkhachhang()
         {

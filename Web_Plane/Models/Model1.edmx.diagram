@@ -4,37 +4,36 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e9336522ef9541b2929d49d4024b0ac7" Name="Diagram1">
-        <EntityTypeShape EntityType="DBMayBay1Model.CBLV" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.CHANGBAY" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.CHITIETHOADON" Width="1.5" PointX="10.5" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.CHUYENBAY" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.CONG" Width="1.5" PointX="12" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.HANGHANGKHONG" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.HOADON" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.KHACHHANG" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.LOAIVE" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.MAYBAY" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.NHAGA" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.SANBAY" Width="1.5" PointX="7.5" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.sysdiagram" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBMayBay1Model.VeMayBay" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
-        <AssociationConnector Association="DBMayBay1Model.FK__CBLV__IDCB__73BA3083" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__CBLV__MaLoaiVe__74AE54BC" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__CHANGBAY__IDCB__6477ECF3" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__CHANGBAY__Sohieu__656C112C" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__CHITIETHO__MaHoa__68487DD7" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__CHITIETHOA__MaVe__693CA210" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__CHUYENBAY__IDHK__5CD6CB2B" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__CHUYENBAY__SoCon__5DCAEF64" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__VeMayBay__IDCB__60A75C0F" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__CONG__TenNhaGa__59FA5E80" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__MAYBAY__IDHK__4F7CD00D" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__HOADON__CCCD__571DF1D5" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__VeMayBay__MaLoai__619B8048" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.FK__NHAGA__IATA__5441852A" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.SANBAYCATCANH" ManuallyRouted="false" />
-        <AssociationConnector Association="DBMayBay1Model.SANBAYHACANH" ManuallyRouted="false" />
+      <Diagram DiagramId="e9465f974a3a4a689d008627f1f8aeba" Name="Diagram1">
+        <EntityTypeShape EntityType="DBMayBayModel.CBLV" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.CHANGBAY" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.CHITIETHOADON" Width="1.5" PointX="10.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.CHUYENBAY" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.CONG" Width="1.5" PointX="12" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.HANGHANGKHONG" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.HOADON" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.KHACHHANG" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.LOAIVE" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.MAYBAY" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.NHAGA" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.SANBAY" Width="1.5" PointX="7.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMayBayModel.VeMayBay" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="DBMayBayModel.FK__CBLV__IDCB__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__CBLV__MaLoaiVe__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__CHANGBAY__IDCB__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__CHANGBAY__Sohieu__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__CHITIETHO__MaHoa__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__CHITIETHOA__MaVe__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__CHUYENBAY__IDHK__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__CHUYENBAY__SoCon__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__VeMayBay__IDCB__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__CONG__TenNhaGa__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__MAYBAY__IDHK__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__HOADON__CCCD__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__VeMayBay__MaLoai__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.FK__NHAGA__IATA__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.SANBAYCATCANH" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMayBayModel.SANBAYHACANH" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

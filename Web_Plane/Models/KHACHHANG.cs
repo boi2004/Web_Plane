@@ -11,7 +11,8 @@ namespace Web_Plane.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class KHACHHANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -30,7 +31,12 @@ namespace Web_Plane.Models
         public Nullable<bool> GioiTinh { get; set; }
         public string QuocTich { get; set; }
         public string Password { get; set; }
-    
+        [Display(Name = "Nh?p l?i m?t kh?u")]
+        [Required(ErrorMessage = "M?t kh?u không ???c ?? tr?ng")]
+        [DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage = "M?t kh?u không trùng kh?p")]
+        public string ConfirmPass { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
     }

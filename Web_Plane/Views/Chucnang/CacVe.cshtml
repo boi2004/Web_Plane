@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Web_Plane.Models.VeMayBay>
+
+@{
+    ViewBag.Title = "CacVe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CacVe</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaVe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChoNgoi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiHanhLy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThanhTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaLoaiVe)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaVe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChoNgoi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiHanhLy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThanhTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoaiVe)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

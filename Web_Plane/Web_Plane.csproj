@@ -189,9 +189,6 @@
     <Compile Include="Models\SANBAY.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\VeMayBay.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -2235,6 +2232,8 @@
     <Content Include="Views\Home\TrangChu.cshtml" />
     <Content Include="Views\Home\Trangvemaybay.cshtml" />
     <Content Include="Views\Home\Thongtincanhan.cshtml" />
+    <Content Include="Views\ChucNang\ThongTinChuyenBay.cshtml" />
+    <Content Include="Views\ChucNang\CacVe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
